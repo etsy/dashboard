@@ -12,4 +12,5 @@ require_once dirname(__FILE__) . '/Dashboard.php';
 require_once dirname(__FILE__) . '/Graphite.php';
 require_once dirname(__FILE__) . '/Ganglia.php';
 require_once dirname(__FILE__) . '/Cacti.php';
+require_once dirname(__FILE__) . '/Tsd.php';
 
