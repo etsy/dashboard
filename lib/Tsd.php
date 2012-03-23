@@ -1,64 +1,21 @@
 <?php
 
-/**
- * Tsd image link generator.
- * @todo This was copied from Graphite and still needs to be cleaned up (remove options that are not available, map options that are available
- * @author emmet
- */
 class Tsd {
 
     protected $time;
-    protected $title;
-    protected $vtitle;
     protected $metrics = array();
     protected $hide_legend = false;
-    protected $hide_grid = false;
-    protected $stacked = false;
     protected $y_min = 0;
     protected $y_max = null;
-    protected $line_width;
-    protected $line_mode = null;
-    protected $pie_chart = false;
     protected $base_url = null;
-
-    public $deploys = null;
 
     public function __construct($time) {
         $this->base_url = Config::$tsd_base_url;
-        //$this->deploys = Config::$tsd_deploys;
         $this->time = $time;
-    }
-
-    public function setTitle($title) {
-        $this->title = $title;
-    }
-
-    public function setVTitle($vtitle) {
-        $this->vtitle = $vtitle;
-    }
-
-    public function setLineMode($mode) {
-        $this->line_mode = $mode;
     }
 
     public function hideLegend($hide) {
         $this->hide_legend = (bool) $hide;
-    }
-
-    public function hideGrid($hide) {
-        $this->hide_grid = (bool) $hide;
-    }
-
-    public function setLineWidth($width) {
-        $this->line_width = (int) $width;
-    }
-
-    public function displayStacked($stack) {
-        $this->stacked = (bool) $stack;
-    }
-
-    public function displayPieChart($pie_chart) {
-        $this->pie_chart = (bool) $pie_chart;
     }
 
     // Set y_min to 'null' to unlock from zero
@@ -69,7 +26,6 @@ class Tsd {
     public function setYMax($y_max) {
         $this->y_max = $y_max;
     }
-
 
     /**
      * Add a metric to the current Tsd object. For Tsd, you can call this
@@ -84,18 +40,6 @@ class Tsd {
             array_unshift($this->metrics, $metric);
         } else {
             $this->metrics[] = $metric;
-        }
-    }
-
-    /**
-     * Include vertical deploy lines over any metrics included in the image.
-     */
-    public function showDeploys($show = true) {
-        if ($show) {
-            foreach (array_reverse($this->deploys) as $deploy) {
-                $target = "alias(drawAsInfinite({$deploy['target']}), 'Deploy: {$deploy['title']}')";
-                $this->addMetric($target, true);
-            }
         }
     }
 
@@ -124,37 +68,15 @@ class Tsd {
             'start' => $this->getTimeParam(),
             'wxh' => '' . $width . 'x' . $height
         );
-        if ($this->title) {
-            $p['title'] = $this->title;
-        }
-        if ($this->vtitle) {
-            $p['vtitle'] = $this->vtitle;
-            $p['hideaxes'] = 'false';
-        }
         if ($this->hide_legend && !$stand_alone) {
-            $p['hideLegend'] = $this->hide_legend;
-        }
-        if ($this->hide_grid) {
-            $p['hideGrid'] = $this->hide_grid;
-        }
-        if ($this->line_width) {
-            $p['lineWidth'] = $this->line_width;
-        }
-        if ($this->stacked) {
-            $p['areaMode'] = 'stacked';
+            $p['nokey'] = $this->hide_legend;
         }
         if ($this->y_min !== null) {
             $range = '[' . $this->y_min . ':';
             if ($this->y_max !== null) {
-               $range += $this->y_max;
+               $range .= $this->y_max;
             }
             $p['yrange'] = $range . ']';
-        }
-        if ($this->line_mode !== null) {
-            $p['lineMode'] = $this->line_mode;
-        }
-        if ($this->pie_chart) {
-            $p['graphType'] = 'pie';
         }
 
         $targets = array();

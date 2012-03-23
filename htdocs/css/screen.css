@@ -42,6 +42,7 @@ img {
 	width: 600px;
 }
 
+span.tsdGraph,
 span.graphiteGraph,
 span.ganglia {
     float: left;
