@@ -41,7 +41,7 @@ $show_deploys = (!$hide_deploys);
 <script type="text/javascript">
 
 				//Note: environment, service_name, grid and metric just get strung together. 
-				params = {environment: "PROD", service_name: "Discussion", grid: "[dp]",metric: "load_one.sum",targetdiv: "graphdiv", periodSelected: periodSelected};
+				params = {environment: "PROD", service_name: "<Service Name>", grid: "<Service Grid>",metric: "load_one.sum",targetdiv: "graphdiv", periodSelected: periodSelected};
 				createDygraph(params);
 
 </script>
