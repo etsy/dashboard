@@ -12,12 +12,12 @@ $show_deploys = (!$hide_deploys);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Web Cluster Dashboard</title>
+<title>Database Dashboard</title>
 <link rel="stylesheet" type="text/css" href="css/screen.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script src="js/dashboard.js"></script>
 </head>
-<body id="webcluster" class="dashboard">
+<body id="database" class="dashboard">
 
 <div id="status"></div>
 
@@ -29,45 +29,28 @@ $show_deploys = (!$hide_deploys);
     </select>
 </form>
 
-<h1>Web Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h1>Database Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=web,type=total}');
+$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=db,type=total}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=web}');
+$tsd->addMetric('avg:1m-avg:proc.loadavg.1min{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('avg:1m-avg:proc.loadavg.1min{host=sac-prod-db-02.unix.newokl.com}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('sum:1m-avg:rate:apache.stats.served.kbytes{cluster=web}');
+$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{host=sac-prod-db-01.unix.newokl.com,type=total}');
+$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{host=sac-prod-db-02.unix.newokl.com,type=total}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
-<h1>Hits and Response Times (<?php echo Dashboard::displayTime($time) ?>)</h1>
-
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('sum:store.latency.hits{page=sales}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
-
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=sales}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
-
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=all-sales}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
 
 </body>
 </html>
