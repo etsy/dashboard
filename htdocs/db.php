@@ -51,6 +51,33 @@ $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{host=sac-prod-db-02.unix.newokl.c
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
+<h1>MySQL (<?php echo Dashboard::displayTime($time) ?>)</h1>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_select{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_insert{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_update{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_replace{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-02.unix.newokl.com}');
+
+echo $tsd->getDashboardHTML(800, 300);
+?>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_select{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_insert{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_update{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_replace{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-01.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-01.unix.newokl.com}');
+
+echo $tsd->getDashboardHTML(800, 300);
+?>
 
 </body>
 </html>
