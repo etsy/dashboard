@@ -67,7 +67,8 @@ echo $tsd->getDashboardHTML(500, 250);
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('sum:analytics.apache.page.code{http_code=200}');
-//$tsd->addMetric('sum:analytics.apache.page.code{http_code=303}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=302}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=304}');
 $tsd->addMetric('sum:analytics.apache.page.code{http_code=404}');
 $tsd->addMetric('sum:analytics.apache.page.code{http_code=500}');
 echo $tsd->getDashboardHTML(500, 250);
