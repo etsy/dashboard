@@ -69,5 +69,11 @@ $tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=all-sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=product}');
+echo $tsd->getDashboardHTML(500, 250);
+?>
+
 </body>
 </html>
