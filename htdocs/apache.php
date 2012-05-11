@@ -54,13 +54,13 @@ echo $tsd->getDashboardHTML(500, 250);
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.processing.80{page_type=_sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.processing.80{page_type=_all-sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_all-sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
