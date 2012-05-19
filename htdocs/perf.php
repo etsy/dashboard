@@ -41,19 +41,22 @@ echo $tsd->getDashboardHTML(500, 250);
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_sales}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_all-sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_all-sales}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_all-sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_product}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_product}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_product}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
@@ -69,19 +72,22 @@ echo $tsd->getDashboardHTML(500, 250);
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_vintage-market-finds}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_vintage-market-finds}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_vintage-market-finds}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_vintage-market-finds_-caty-}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_vintage-market-finds_-caty-}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_vintage-market-finds_-caty-}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_vintage-market-finds_product}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_vintage-market-finds_product}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_vintage-market-finds_product}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
@@ -96,13 +102,15 @@ echo $tsd->getDashboardHTML(500, 250);
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_join}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_join}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_join}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_login}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_login}');
+$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_login}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
