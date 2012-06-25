@@ -1,0 +1,40 @@
+.copy-container {
+    position: absolute;
+    right: 0;
+    display: inline;
+}
+
+.copy-source {
+    display: none;
+}
+
+.copy-button {
+    text-align: center;
+    border: 1px solid silver;
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+    font-size: smaller;
+}
+
+.copyable {
+    position: relative;
+}
+
+.copy-button.hover {
+    background-color: #eee;
+}
+
+.copy-button.active {
+    background-color: #aaa;
+}
+
+#copy-message {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border: 1px solid silver;
+    display: none;
+    padding: 10px;
+    background-color: lightgreen;
+}

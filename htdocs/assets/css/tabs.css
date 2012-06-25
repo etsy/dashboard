@@ -1,0 +1,45 @@
+.home {
+    left: 14px;
+    position: absolute;
+    top: 6px;
+}
+.home img {
+    width: 16px;
+    height: 8px;
+}
+.tabs {
+    list-style: none;
+    padding: 0 40px;
+    margin: 0 0 10px;
+}
+    .tabs li {
+        float: left;
+        width: auto;
+        margin: 0;
+    }
+        .tabs li a {
+            display: block;
+            background-color: #F5F6F1;
+            border: 1px solid #DADBD6;
+            border-left: 0;
+            border-bottom: 0;
+            font-size: 13px;
+            padding: 8px 12px;
+            margin: 0 0 -1px;
+            text-align: center;
+            color: #0192B5;
+            font-weight: bold;
+            position: relative; /* msie */
+        }
+        .tabs li.first a {
+            border-left: 1px solid #DADBD6;
+        }
+        .tabs li.active a,
+ 		.tabs li a.active {
+            background-color: #fff;
+            border-bottom: 1px #fff solid;
+            color: #666666;
+        }
+ 		.tabs li img {
+            margin-bottom: -1px;
+        }

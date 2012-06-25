@@ -1,0 +1,103 @@
+/* stylesheet for CI dashboards */
+
+body {
+ font-family: arial, helvetica, sans-serif;
+ font-size: 13px;
+}
+
+ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+img {
+ margin-right: 8px;
+ margin-bottom: 24px;
+}
+
+li {
+   display: block;
+   float: left;
+   width: 655px;
+   margin-right: 8px;
+}
+
+body#dashboardForOneHour li {
+   width: 500px;
+}
+
+li.multiples {
+   width: 1400px;
+}
+
+body#dashboardForOneHour li.multiples {
+   width: 1100px;
+}
+
+p {
+  text-align: left;
+}
+
+div {
+   float: left;
+   width: 1380px;
+}
+
+body#dashboardForOneHour div {
+   width: 1120px;
+}
+
+body div#status {
+  position: absolute;
+  left: 80%;
+  color: #ccc;
+  width: auto;
+
+}
+
+div.navigationRibbon a {
+ margin: 0 0.4em;
+}
+
+p.caption {
+ text-align: center;
+}
+
+div.navigationRibbon span, 
+div.navigationRibbon a {
+ margin: 0em 0.4em;
+ display: block;
+ float: left;
+}
+
+div.navigationRibbon span {
+ height: 20px;
+ width: 20px;
+ margin-top: 1.8em;
+}
+
+div.navigationRibbon p.caption {
+ float: left;
+ margin: 2em 1em 1em 0;
+}
+
+span.productionDeploymentsPerDay {
+ background-color: #99cccc;
+}
+
+span.failedPlatformAndUnitTestsPerHour {
+ background-color: #ff0000;
+}
+
+span.allPlatformAndUnitTestsPerHour {
+ background-color: #cccccc;
+
+}
+
+span.productionDeploymentsPerHour {
+ background-color: black;
+}
+
+span.tryServerBuildsPerHour {
+    background-color: #364f8a;
+}

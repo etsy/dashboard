@@ -1,0 +1,89 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+    width: 800px;
+    margin: 10px auto;
+    position: relative;
+}
+
+#settings {
+    width: 100%;
+    margin-bottom: 75px;
+    float: left;
+}
+
+#local_time_message {
+    display: inline;
+    color: #aaa;
+    font-size: 10pt;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#local_time {
+    color: #555;
+}
+
+#settings_from {
+    float: left;
+}
+
+.settings_input {
+    display: none;
+    float: left;
+}
+
+#time_boxes {
+}
+
+.time_section {
+    margin-left: 50px;
+    display: inline-block;
+    width: 233px;
+}
+
+.time_section h1 {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    font-size: 12pt;
+    color: #777;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 6px;
+}
+
+.time_section h1 .offset {
+    font-size: 8pt;
+    color: #aaa;
+    float: right;
+}
+
+.time_section:first-child {
+    margin-left: 0px;
+}
+
+.time_section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.time_section ul li {
+    margin-bottom: 15px;
+}
+
+.time_section ul li label {
+    color: #ccc;
+    font-size: 8pt;
+}
+
+.time_section ul li .time {
+    font-size: 13pt;
+    color: #777;
+}
+
+.time_section ul li .time.readable {
+    font-size: 13pt;
+    color: #f77
+}

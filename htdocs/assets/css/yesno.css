@@ -1,0 +1,65 @@
+.littleYesno a {
+    background-color: #DFFCC0;
+    border: 1px solid #BEE69A;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 2px 0 0 #E7E7E7;
+    -moz-box-shadow: 0 2px 0 0 #E7E7E7;
+    -ms-box-shadow: 0 2px 0 0 #E7E7E7;
+    -o-box-shadow: 0 2px 0 0 #E7E7E7;
+    box-shadow: 0 2px 0 0 #E7E7E7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    color: #469A03;
+}
+
+.littleYesno a:hover {
+    background-color: #D4F7B1;
+    border: 1px solid #BEE69A;
+    text-decoration: none;
+}
+
+.littleYesno .small {
+    padding-top: 4px;
+    font-size: 12px;
+    color: #333;
+}
+
+.littleYesno .small span {
+    display: block;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.littleYesno .small span.metadata {
+    font-weight: normal;
+    margin: 0;
+}
+
+.littleYesno .red a {
+    background-color: #FFD7D7;
+    border: 1px solid #E6B69A;
+    color: #CF4B4B;
+}
+
+.littleYesno .red a:hover {
+    background-color: #FFBCBC;
+    border: 1px solid #E69C7D;
+    text-decoration: none;
+}
+
+.littleYesno .black a {
+    background-color: #D9D9D9;
+    border: 1px solid #C6C6C6;
+    color: #333;
+}
+
+.littleYesno .black a:hover {
+    background-color: #C2C2C2;
+    border: 1px solid #AFAFAF;
+    text-decoration: none;
+}

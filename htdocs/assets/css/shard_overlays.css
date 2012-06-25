@@ -1,0 +1,85 @@
+#groupRow {
+    margin-bottom: 5px;
+    height: 185px; 
+}
+
+#rowTitle {
+    float: left;
+    width: 220px;
+    height: 100%;
+}
+
+#graphBox {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    width: 397px;
+    height: 176px;
+}
+
+#graph  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #CCCCCC;
+    z-index: 2;
+    opacity: 0.5; 
+}
+
+#overlay-alt {
+    width: 100%;
+    font-family: WebSymbolsRegular; 
+    font-size: 16pt;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    color: #cc0033;
+}
+
+#boxmsg {
+    width: 100%;
+    text-align: center;
+    padding-top: 73px;
+    padding-left: 25px;
+    font-weight: bolder;
+    color: black;
+}
+
+#alert {
+    padding-top: 4px;
+    padding-left: 7px;
+    width: 389px;  
+}
+
+.toolTip { /* This is the hook that the jQuery script will use */
+    cursor: help; 
+    position: relative; /* This contains the .toolTipWrapper div that is absolutely positioned  */
+}
+
+.toolTipWrapper { /* The wrapper holds its insides together */
+    font-family: "Lucida Grande";
+    background: #cc0033;
+    width: 381px;  
+    vertical-align: center;
+    position: absolute; /* Absolute will make the tooltip float above other content in the page */
+    padding: 8px;
+    top: 0;
+    left: 0;
+    display: none; /* It has to be displayed none so that the jQuery fadein and fadeout functions will work */
+    color: #FFF;
+    font-weight: bold; 
+    font-size: 9pt; /* A font size is needed to maintain consistancy */
+    z-index: 10;
+}

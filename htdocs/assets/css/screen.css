@@ -1,0 +1,490 @@
+@import 'tooltip.css';
+@import 'tabs.css';
+@import 'yesno.css';
+
+body {
+    margin: 10px;
+    font-family: helvetica;
+    background: #eee;
+    color: black;
+    position: relative;
+}
+
+.index table {
+    margin-bottom: 15px;
+}
+
+.index div.section {
+    width: 95%;
+    clear: both;
+}
+
+#frame {
+    padding: 0 0 10px;
+    float: left;
+}
+
+h1, h2, h3 {
+    text-transform: lowercase;
+    color: #aaa;
+    margin: 0;
+    clear: both;
+}
+
+a,
+a:link,
+a:visited {
+    color: #666699;
+}
+
+h2.section-title a,
+h2.section-title a:link
+h2.section-title a:visited {
+    color: #aaa;
+}
+
+img {
+    border: 0;
+}
+
+span.error {
+    color: red;
+    display: inline;
+}
+
+span.hidden {
+    display: none;
+}
+
+span.radio-label {
+    margin-right: 5px;
+}
+
+div.notice {
+    background: #fff;
+    padding: 10px 20px;
+    border: solid 1px #CCC;
+    margin: 0 5px;
+    color: #545454;
+}
+
+div.section {
+    margin: 5px;
+    padding: 10px 20px;
+    background: #fff;
+    border: solid 1px #ccc;
+    float: left;
+    clear: both;
+}
+
+#status {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+    color: silver;
+    line-height: 4px;
+}
+
+#controls, .controls {
+    margin: 5px;
+    padding: 10px 20px 10px 20px;
+    background: #fff;
+    border: solid 1px #ccc;
+    font-size: 13px;
+    clear: both;
+}
+
+.controls-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.control label {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.controls-inner {
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+    margin-top: 5px;
+    clear: both;
+}
+
+.controls-inner:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.controls-inner:first-child {
+    margin-top: 0;
+}
+
+.controls .black {
+    position: absolute;
+    right: -15px;
+    top: -5px;
+    opacity: 0;
+    width: 150px;
+}
+
+.controls .black a {
+    float: right;
+}
+
+.controls .black:hover {
+    opacity: 100;
+}
+
+.control {
+    margin-right: 10px;
+    border-right: solid 1px #ccc;
+    padding-right: 10px;
+}
+
+.control:last-child {
+    border-right: 0;
+}
+
+.cacti_tuples_read,
+.cacti_inserts_updates_deletes,
+.cacti_scans,
+.cacti_backends {
+    display: inline;
+}
+
+.cacti_tuples_read img,
+.cacti_inserts_updates_deletes img,
+.cacti_scans img,
+.cacti_backends img {
+    width: 485px;
+}
+
+.groupRow {
+    clear: left;
+    margin-bottom: 15px;
+}
+
+.groupName {
+    width: 150px;
+    float: left;
+}
+
+.groupGraph {
+    float: left;
+    margin-left: 10px;
+}
+
+/* These rules are for the displays */
+
+body#screen01,
+body#screen02 {
+    overflow: hidden;
+}
+
+.gangliaMask {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 558px;
+    height: 330px;
+    background-position: -5px -22px;
+}
+
+.mask {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 558px;
+    height: 280px;
+    background-position: -5px -22px;
+}
+
+.graphWrap {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: gray;
+    line-height: 26px;
+    position: absolute;
+}
+
+#webs_apache_requests_per_second {
+    top: 15px;
+    left: 20px;
+}
+
+#webs_apache_busy_workers {
+    top: 15px;
+    left: 600px;
+}
+
+#api_apache_requests_per_second {
+    top: 385px;
+    left: 20px;
+}
+
+#api_apache_busy_workers {
+    top: 385px;
+    left: 600px;
+}
+
+#memcache_setrate {
+    top: 15px;
+    left: 1280px;
+}
+
+#memcache_getrate {
+    top: 385px;
+    left: 1280px;
+}
+
+#master_tuples_read {
+    top: 755px;
+    left: 20px;
+}
+
+#master_inserts_updates_deletes {
+    top: 755px;
+    left: 625px;
+}
+
+#master_scans {
+    top: 755px;
+    left: 1235px;
+}
+
+#master_backends {
+    top: 755px;
+    left: 1235px;
+}
+
+#master_tuples_read .mask {
+    width: 580px;
+    height: 255px;
+    background-position: -4px -33px;
+    background-size: 610px auto;
+    background-repeat: no-repeat;
+}
+
+#master_inserts_updates_deletes .mask {
+    width: 595px;
+    height: 234px;
+    background-position: -3px -32px;
+    background-size: 610px auto;
+    background-repeat: no-repeat;
+}
+
+#master_scans .mask {
+    width: 590px;
+    height: 240px;
+    background-position: -5px -22px;
+    background-size: 610px auto;
+    background-repeat: no-repeat;
+}
+
+#master_backends .mask {
+    width: 586px;
+    height: 238px;
+    background-position: -4px -28px;
+    background-size: 610px auto;
+    background-repeat: no-repeat;
+}
+
+p.html_legend, p.html_title {
+    margin: 0;
+    font-size: 13px;
+    text-align: center;
+    min-height: 1em;
+}
+
+p.html_title {
+    margin-top: 10px;
+    color: grey;
+    overflow: hidden;
+}
+
+span.graphiteGraph,
+span.ganglia,
+span.newRelicGraph,
+div.jenkinsGraph,
+div.ciStatusGraph,
+span.gDocsGraph,
+.flotGraph,
+.dashboard-graph {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: text-top;
+}
+
+div.ciStatusGraph {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+span.singleMetricMedium {
+    padding-bottom: 14px;
+}
+
+span.gDocsGraph {
+    width: 548px;
+}
+
+.clear {
+    clear: both;
+    min-height: 1%;
+}
+
+.clear:after {
+    content: '.';
+    clear: both;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.leaderboard .legend {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+.leaderboard .legend span {
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.leaderboard .acceptable {
+    background-color: #9FEE00;
+    color: black;
+}
+
+.leaderboard .needs-work {
+    background-color: #009999;
+    color: black;
+}
+
+.leaderboard .unacceptable {
+    background-color: #FF0000;
+    color: black;
+}
+
+.leaderboard td, .leaderboard th {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.index-group-title {
+    margin: 0.7em 0 10px 0;
+    font-weight: bold;
+    color: #AAA;
+    text-transform: lowercase;
+}
+
+.graphiteTable {
+    width: 300px;
+    float: left;
+    clear: right;
+    margin-top: 20px;
+}
+
+.graphiteTable p {
+    font-weight: 100;
+    font-size: .75em;
+}
+
+.graphiteTable table {
+    border-collapse: collapse;
+}
+
+.graphiteTable table th, .graphiteTable table td {
+    padding: 8px 16px;
+    font-size: .75em;
+    text-align: left;
+}
+
+.graphiteTable table th {
+    background: #F4F4F0;
+    font-weight: 100;
+    border-top: 1px solid #D3D4CB;
+    border-bottom: 1px solid #D3D4CB;
+    color: #999;
+}
+
+.graphiteTable table .label th {
+    background-color: #fff;
+    color: #222;
+}
+
+.graphiteTable table td {
+    vertical-align: top;
+    border-bottom: 1px solid #E9EAE4;
+}
+
+.graphite-percentage {
+    color: #999;
+    font-family: georgia;
+    font-size: 4em;
+    white-space: normal;
+}
+
+.graphite-percentage .col_left,
+.graphite-percentage .col_right {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.graphite-percentage .col_right {
+    position: relative;
+    top: -0.2em;
+}
+
+.graphite-percentage .value_whole {
+}
+
+.graphite-percentage .value_point,
+.graphite-percentage .value_decimal,
+.graphite-percentage .value_symbol {
+    font-size: 0.45em;
+    line-height: 2em;
+}
+
+.graphite-percentage .value_point,
+.graphite-percentage .value_symbol {
+    position: relative;
+    top: 0.1em;
+    margin: 0.1em;
+}
+
+.graphite-percentage .unit {
+    color: silver;
+    font-size: 0.17em;
+    line-height: 1em;
+    display: block;
+    position: relative;
+    left: 1em;
+    top: -0.5em;
+}
+
+.copy-container {
+    display: none;
+}
+
+.graphite-bar-percentage .bullet { font: 10px sans-serif; }
+.graphite-bar-percentage .bullet .tick line { stroke: #666; stroke-width: .5px; }
+.graphite-bar-percentage .bullet .range.s0 { fill: #eee; }
+.graphite-bar-percentage .bullet .range.s1 { fill: #ddd; }
+.graphite-bar-percentage .bullet .range.s2 { fill: #ccc; }
+.graphite-bar-percentage .bullet .range.s3 { fill: #bbb; }
+.graphite-bar-percentage .bullet .measure.s0 { fill: lightsteelblue; }
+.graphite-bar-percentage .bullet .measure.s1 { fill: steelblue; }
+.graphite-bar-percentage .bullet .title { font-size: 14px; font-weight: bold; }
+.graphite-bar-percentage .bullet .subtitle { fill: #999; }

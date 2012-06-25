@@ -1,0 +1,278 @@
+body {
+    font-family: sans-serif;
+    font-size: 80%;
+}
+
+span.rolling-average {
+    float: right;
+    color: #999
+}
+
+.range_form .button-medium {
+    margin-top: 5px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    font-size: 1em !important;
+    margin: 0;
+    line-height: 1.25em !important;
+}
+
+p.stat_info {
+    color: #999999;
+    margin: -35px 60px 0 0;
+    padding: 0;
+    font-size: 1.5em;
+    float: right;
+}
+
+div.shop_metrics_events {
+    clear: left;
+}
+
+/* holds everything (title, graph, history) for one graph */
+.graph_container {
+    height: 560px;
+}
+
+.graph_container .html_title, .metric-label .text {
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    color: #aaa;
+}
+
+div.graph {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+div.graph_history {
+    margin: 0 20px 10px;
+}
+
+div.graph_history span {
+    display: inline-block;
+}
+
+div.graph_history p {
+    margin: 0;
+    padding: 10px 10px 10px 10px;
+    color: #666666;
+    font-size: 1.1em;
+}
+
+div.graph_history p.odd {
+    background-color: #EFEFEF;
+}
+
+div.graph_history .perc_change {
+    font-weight: bold;
+}
+
+div.graph_history .perc_change_pos {
+    color: #009900;
+}
+
+div.graph_history .perc_change_neg {
+    color: #FF0000;
+}
+
+div.graph_history .history_group_1 {
+    width: 49%;
+    text-align: left;
+}
+
+div.graph_history .history_group_2 {
+    width: 49%;
+    text-align: right;
+}
+
+.history_group_1 .time_label, .stat_date {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.history_group_2 .stat_value {
+    font-weight: bold;
+    padding-left: 10px;
+    width: 50px;
+    text-align: right;
+    color: #333333;
+}
+
+.shop_metrics_events {
+    margin: 0 50px 0 25px;
+    padding: 0 5px;
+}
+
+.event_form {
+    margin-top: 30px;
+}
+
+.event_form button.button-medium {
+    float: left;
+    clear: both;
+}
+
+.event_form, .edit_event_form {
+    padding: 5px;
+    background: #fafafa;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.event_form h4 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.event_form input {
+    float: left;
+    margin-bottom: 15px;
+}
+
+.event_form label, .event_form span {
+    float: left;
+}
+
+.event_form label {
+    margin: 0 3px 10px 8px;
+    padding-top: 5px;
+}
+
+.edit_event_form {
+    padding-left: 20px;
+    border-color: #ccc;
+}
+
+.edit_event_form a {
+    margin-left: 5px;
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.edit_event_form .button-medium {
+    margin-top: 5px;
+}
+
+div.event {
+    position: relative;
+}
+
+div.event div.edit-event {
+    display: none;
+    position: absolute;
+    width: 500px;
+    top: -27px;
+    z-index: 1;
+}
+
+div.graph_container .metric-label {
+    width: 220px;
+    margin-left: 32px;
+    float: left;
+}
+div.graph_container .metric-label .text {
+    float: left;
+    font-size: 12px;
+    border-bottom: none;
+}
+div.graph_container .metric-label .swatch {
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
+    height: 15px;
+    width: 15px;
+    border: 2px solid #DDD;
+}
+
+div.todays-stat {
+    position: absolute;
+    z-index: 1;
+    right: 25px;
+    top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e4e4e4;
+    padding: 5px 8px 3px 8px;
+    border-radius: 3px;
+    opacity: .7;
+}
+
+.event-marker {
+    position: absolute;
+    height: 236px;
+    width: 2px;
+    background: #999;
+    padding-top: 40px;
+    top: 4px;
+    cursor: pointer;
+    color: #666;
+}
+
+.event-marker .event-summary {
+    z-index: 100;
+    padding: 10px;
+    text-align: center;
+    background: #efefef;
+    border: 1px solid #ccc;
+    float: left;
+    border-radius: 3px;
+    position: relative;
+    left: -10px;
+    width: 150px;
+    display: none;
+}
+
+.event-marker .event-summary .event-date {
+    font-size: .85em;
+    padding: 2px 0 0 0;
+    color: #999;
+}
+
+div.event-info {
+    margin-bottom: 10px;
+}
+
+.event-info .edit-event-button {
+    display: none;
+    float: right;
+    width: 14px;
+    height: 14px;
+    background: url('/images/edit-icon.gif') no-repeat;
+    opacity: .25;
+}
+
+.event-info .edit-event-button:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+.event-info .event-name {
+    font-weight: bold
+}
+
+.event-info .event-date {
+    font-size: 11px;
+    color: #666
+}
+
+button.button-medium {
+    padding-bottom: 24px;
+}
+
+body .ui-datepicker {
+    border-radius: 5px;
+    border-width: 1px;
+    width: 215px;
+}
+
+body .ui-datepicker .ui-datepicker-header {
+    padding-top: 5px;
+}
+
+body .ui-datepicker .ui-datepicker-prev, body .ui-datepicker .ui-datepicker-next {
+    top: 5px;
+}

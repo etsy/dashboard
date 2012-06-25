@@ -1,0 +1,36 @@
+.copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    border: 1px solid silver;
+    background-color: #ccc;
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.copyable {
+    position: relative;
+}
+
+.copyable:hover .copy-button {
+    display: inline-block;
+}
+
+.copy-button.hover {
+    background-color: #eee;
+}
+
+.copy-button.active {
+    background-color: #aaa;
+}
+
+#copy-message {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    border: 1px solid silver;
+    display: none;
+    padding: 10px;
+}

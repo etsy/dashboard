@@ -1,0 +1,67 @@
+/*
+ * Fluid Grid System
+ * http://fluid.gs/
+ * http://fluid.newgoldleaf.com/
+ *
+ * Copyright (c) 2009 Joseph Silvashy and New Gold Leaf LP
+ * Licensed under the MIT, GPL, and CC licenses.
+ *
+ * Date: 2009-06-22 (Mon, 22 Jun 2009)
+ * Revision: 3
+ *
+ * Modifications and fixes made from:
+ * http://meyerweb.com/eric/tools/css/reset/
+ * http://code.google.com/p/blueprintcss/
+ */
+
+
+/* .fluid_grid_layout is the main wrapper for grid system, comment out for 100% width of body */ 
+/* .fluid_grid_layout {width:80%; margin:0 4%; position:relative;} */
+
+/* min-width does not work in IE 6/7 */
+body {min-width:860px; width:100%;}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+body {line-height:1;}
+ol, ul {list-style-type:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+:focus {outline:0;}
+ins {text-decoration:none;}
+del {text-decoration:line-through;}
+table {width:99%;}
+th, td {padding:4px 0px 4px 0;}
+tr:last-child td {border-bottom-width:0;}
+tfoot {font-style:italic;}
+caption {background:transparent;}
+
+body, blockquote * {font:12px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;}
+h1, h2, h3, h4 {font-weight:normal;}
+ul {list-style-type:none; list-style-position:inside;}
+ol {list-style-type:decimal; list-style-position:inside;}
+abbr, acronym {border-bottom-width:0;}
+strong {font-weight:bold;}
+em {font-style:italic;}
+
+/* .section and .column are required in your HTML */
+div.section {display:table; width:100%; border-collapse:collapse;}
+div.column {display: table-cell;}
+
+/* .column widths, -10% of "precived width" for 6 column layouts */
+div.six_column.section div.one {width:15%;}
+div.six_column.section div.two {width:30%;}
+div.six_column.section div.three {width:45%;}
+div.six_column.section div.four {width:60%;}
+div.six_column.section div.five {width:75%;}
+div.six_column.section div.six {width:90%;}
+
+div.nine_column.section div.one {width:10%;}
+div.nine_column.section div.two {width:20%;}
+div.nine_column.section div.three {width:30%;}
+div.nine_column.section div.four {width:40%;}
+div.nine_column.section div.five {width:50%;}
+div.nine_column.section div.six {width:60%;}
+div.nine_column.section div.seven {width:70%;}
+div.nine_column.section div.eight {width:80%;}
+div.nine_column.section div.nine {width:90%;}

@@ -1,0 +1,76 @@
+.graph {
+    margin-top: 24px;
+    position: relative;
+}
+
+div.control-section {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+}
+
+span.button-medium {
+    vertical-align: middle;
+}
+
+div.todays-stat {
+    position: absolute;
+    z-index: 1;
+    right: 40px;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #e4e4e4;
+    padding: 5px 8px 3px 8px;
+    border-radius: 3px;
+    opacity: 0.7;
+}
+
+div.all-trends {
+    margin: 14px 0px;
+}
+
+div.trends {
+    font-family: Georgia, Times New Roman, serif;
+    background: #eee;
+    text-align: center;
+    border-radius: 14px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+div.trends div.trend {
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+}
+
+div.trends div.trend div.figure {
+    font-size: 36pt;
+    color: #999;
+    margin-top: 14px;
+}
+
+div.trends div.trend div.figure.neg {
+    color: #b4797b;
+}
+
+div.trends div.trend div.figure.pos {
+    color: #6aa886;
+}
+
+div.trends div.trend div.figure.none {
+    color: #ccc;
+    font-style: italic;
+}
+
+div.trends h2 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+div.trends div.trend h3 {
+    font-size: 8pt;
+    margin-top: 6px;
+}

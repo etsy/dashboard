@@ -1,0 +1,83 @@
+.gradientBackground(@from: #aaa, @to: #777, @stopColor: #fff, @stopPosition: 1.0)
+{ 
+    background: @stopColor;
+    background: -webkit-gradient(linear, left bottom, left top, from(@from), to(@to), color-stop(@stopPosition, @stopColor));
+    background: -moz-linear-gradient(bottom,  @from,  @to);
+}
+
+.gradientBackgroundTop(@from: #aaa, @to: #777, @stopColor: #fff, @stopPosition: 1.0)
+{ 
+    background: @stopColor;
+    background: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to), color-stop(@stopPosition, @stopColor));
+    background: -moz-linear-gradient(top, @from, @to);
+}
+
+.roundedCorners (@radius: 5px) { 
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+
+}
+
+.boxShadow(@horizontal: 1px, @vertical: 1px, @blur: 6px, @color: #ddd)
+{ 
+  -moz-box-shadow: @horizontal @vertical @blur @color;
+  -webkit-box-shadow: @horizontal @vertical @blur @color;
+   box-shadow: @horizontal @vertical @blur @color;
+}
+
+.rotate(@angle: 45deg)
+{
+    -moz-transform:rotate(@angle);
+    -webkit-transform:rotate(@angle);
+    -o-transform:rotate(@angle);
+}
+
+.fBubble(@border: 1px solid #aaa, @background-color: #f0f0f0)
+{
+        border: @border;
+        background-color: @background-color;
+        display: inline-block;
+        padding: 10px 10px 10px 10px;
+        .roundedCorners(8px);
+         position: relative;
+         .boxShadow();
+        .arrow {
+            border-left: @border;
+            border-bottom: @border;
+            background-color: @background-color;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            .rotate(135deg);
+            position: absolute;
+            left: 100px;
+            top: -9px;
+        }
+}
+
+.fTransition(@definition: color 1s ease-in)
+{
+    -webkit-transition:@definition;
+   -moz-transition:@definition;
+   -o-transition:@definition;
+   transition:@definition;
+}
+
+
+.fixedWidthNoWrap(@width: 100%, @minWidth: 100%)
+{
+   min-width: @minWidth;
+   width: @width;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.columns(@count)
+{
+   column-count: @count;
+   -moz-column-count: @count;
+   -webkit-column-count: @count;
+
+}

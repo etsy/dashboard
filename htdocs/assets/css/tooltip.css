@@ -1,0 +1,22 @@
+#tooltip {
+    position: absolute;
+    display: none;
+    border: 3px solid #ccc;
+    background: rgba(255,255,255, .98);
+    color: #666;
+}
+#tt-title {
+    font-weight: bolder;
+    padding: 6px;
+    background: #ddd;
+}
+
+#tt-count, #tt-date{
+    margin: 6px;
+    float: left;
+}
+
+#tooltip #tt-date {
+	clear: both;
+	float: none;
+}

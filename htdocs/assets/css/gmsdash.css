@@ -1,0 +1,68 @@
+.container {
+    position: relative;
+}
+
+#gms-chart {
+    width: 1200px;
+    height: 580px;
+}
+
+#gms-gauge {
+    position: absolute;
+    top: 350px;
+    left: 50px;
+    z-index: 10;
+}
+
+#gms-totals {
+    width: 1200px;
+    font-weight: bolder;
+    text-transform: lowercase;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+#gms-totals span {
+    margin-right: 10px;
+}
+
+#gms-totals img {
+    float: right;
+}
+
+.gms-current {
+    font-size: 40px;
+    float: left;
+    margin-right: 25px;
+}
+
+.gms-time-remaining {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.gms-previous {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.gms-more-than-previous {
+    color: green;
+}
+
+.gms-less-than-previous {
+    color: red;
+}
+
+.gms-forecast {
+    font-size: 20px;
+}
+
+.good {
+    color: green;
+}
+
+.bad {
+    color: red;
+}

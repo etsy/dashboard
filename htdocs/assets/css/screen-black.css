@@ -1,0 +1,27 @@
+body {
+    background: #444;
+    color: silver;
+}
+
+div.notice {
+    background: black;
+    color: silver;
+}
+
+div.section, #controls {
+    background: black;
+}
+
+h1, h2, h3 {
+    color: silver;
+}
+
+.tabs li a {
+    background: #444;
+}
+
+.tabs li.active a {
+    background: black;
+    border-bottom-color: black;
+    color: silver;
+}
