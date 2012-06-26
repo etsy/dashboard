@@ -117,6 +117,13 @@ echo $tsd->getDashboardHTML(500, 250);
 
 <?
 $tsd = new Tsd($time);
+$tsd->addMetric('sum:1m-sum:analytics.mysql.order.source.order_count');
+$tsd->addMetric('sum:1m-sum:analytics.mysql.cart_line.created_by.sales_event_id.count');
+echo $tsd->getDashboardHTML(500, 250);
+?>
+
+<?
+$tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_add-to-cart-ajax.json,env=prod}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
