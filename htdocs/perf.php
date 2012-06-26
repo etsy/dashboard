@@ -34,7 +34,7 @@ $show_deploys = (!$hide_deploys);
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('sum:analytics.apache.page.count{page_type=_sales}');
-$tsd->addMetric('sum:analytics.apache.page.count{page_type=_all-sales}');
+$tsd->addMetric('sum:analytics.apache.page.count{page_type=_}');
 $tsd->addMetric('sum:analytics.apache.page.count{page_type=_product}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
@@ -42,21 +42,18 @@ echo $tsd->getDashboardHTML(500, 250);
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_sales}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_all-sales}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_all-sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_product}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_product}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
@@ -73,21 +70,18 @@ echo $tsd->getDashboardHTML(500, 250);
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_vintage-market-finds}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_vintage-market-finds}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_vintage-market-finds_-caty-}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_vintage-market-finds_-caty-}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_vintage-market-finds_product}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_vintage-market-finds_product}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
@@ -103,14 +97,33 @@ echo $tsd->getDashboardHTML(500, 250);
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_join}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_join}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_login}');
-$tsd->addMetric('avg:analytics.apache.page.processing.95{page_type=_login}');
+echo $tsd->getDashboardHTML(500, 250);
+?>
+
+<h1>Cart Hits and Response Times (<?php echo Dashboard::displayTime($time) ?>)</h1>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:analytics.apache.page.count{page_type=_add-to-cart-ajax.json}');
+$tsd->addMetric('max:analytics.apache.page.max_per_sku{env=prod}');
+echo $tsd->getDashboardHTML(500, 250);
+?>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_add-to-cart-ajax.json,env=prod}');
+echo $tsd->getDashboardHTML(500, 250);
+?>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('avg:analytics.apache.page.serve.95{page_type=_view-cart,env=prod}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
