@@ -29,42 +29,23 @@ $show_deploys = (!$hide_deploys);
     </select>
 </form>
 
-<h1>Database Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h1>CPU Total Use Percent by host (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=db,type=total}');
-echo $tsd->getDashboardHTML(500, 250);
+$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=db,type=total,host=*}');
+echo $tsd->getDashboardHTML(1200, 700);
 ?>
+
+<h1>Load Avg. Last Min (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:1m-avg:proc.loadavg.1min{host=sac-prod-db-01.unix.newokl.com}');
-$tsd->addMetric('avg:1m-avg:proc.loadavg.1min{host=sac-prod-db-02.unix.newokl.com}');
-echo $tsd->getDashboardHTML(500, 250);
+$tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=db,host=*}');
+echo $tsd->getDashboardHTML(1200, 700);;
 ?>
 
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{host=sac-prod-db-01.unix.newokl.com,type=total}');
-$tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{host=sac-prod-db-02.unix.newokl.com,type=total}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
-
-<h1>MySQL (<?php echo Dashboard::displayTime($time) ?>)</h1>
-
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_select{host=sac-prod-db-02.unix.newokl.com}');
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_insert{host=sac-prod-db-02.unix.newokl.com}');
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_update{host=sac-prod-db-02.unix.newokl.com}');
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_replace{host=sac-prod-db-02.unix.newokl.com}');
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-02.unix.newokl.com}');
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-02.unix.newokl.com}');
-$tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-02.unix.newokl.com}');
-
-echo $tsd->getDashboardHTML(800, 300);
-?>
+<h1>king-prod-db01 Query Count (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
 <?
 $tsd = new Tsd($time);
@@ -76,8 +57,24 @@ $tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-01.unix
 $tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-01.unix.newokl.com}');
 $tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-01.unix.newokl.com}');
 
-echo $tsd->getDashboardHTML(800, 300);
+echo $tsd->getDashboardHTML(1200, 700);
 ?>
+
+<h1>king-prod-db02 Query Count (<?php echo Dashboard::displayTime($time) ?>)</h1>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_select{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_insert{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_update{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_replace{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-02.unix.newokl.com}');
+$tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-02.unix.newokl.com}');
+
+echo $tsd->getDashboardHTML(1200, 700);
+?>
+
 
 </body>
 </html>
