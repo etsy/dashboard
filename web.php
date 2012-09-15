@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(dirname(__FILE__)) . '/lib/bootstrap.php';
+require_once dirname(__FILE__) . '/lib/bootstrap.php';
 
 $times = Dashboard::getTimes();
 
@@ -12,12 +12,12 @@ $show_deploys = (!$hide_deploys);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Web Cluster Dashboard</title>
+<title>Deploy Dashboard</title>
 <link rel="stylesheet" type="text/css" href="css/screen.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script src="js/dashboard.js"></script>
 </head>
-<body id="webcluster" class="dashboard">
+<body id="deploy" class="dashboard">
 
 <div id="status"></div>
 
@@ -49,7 +49,7 @@ $tsd->addMetric('sum:1m-avg:rate:apache.stats.served.kbytes{cluster=web}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
-<h1>Hits and Response Times (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h1>Sales Page Hits and Response Times (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
 <?
 $tsd = new Tsd($time);
@@ -63,17 +63,6 @@ $tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=all-sales}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
-
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=product}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
 
 </body>
 </html>

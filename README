@@ -1,3 +1,34 @@
+One Kings Lane Getting Started
+----------------------
+
+Until this is setup on a shared server, 3 steps are needed to use the Etsy dashboard with OpenTSDB:
+
+1. git clone https://github.com/okl/dashboard.git
+2. open a tunnel to OpenTSDB, e.g.: ssh -o ServerAliveInterval=5 -l emmet -L 4242:sac-ops-adm-03:4242 colo-gate.newokl.com
+3. Set up an apache httpd.conf directory in your local instance and restart. Following is a sample:
+
+<VirtualHost *:80>
+    ServerName localhost.newokl.com
+    DocumentRoot "/work/htdocs/store/public"
+ 
+    SetEnv APPLICATION_ENV "production"
+ 
+    Alias /dashboard/ /Volumes/MacHD_case_sensitive/htdocs/dashboard/htdocs/
+
+    <Directory "/work/htdocs/store/public">
+	...
+	</Directory>
+
+    <Directory "/work/htdocs/dashboard/htdocs">
+        DirectoryIndex web.php
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+Once you have the dashboard working, create and push additional .php dashboard files to track whatever metrics matter most to you (and share with everyone). More on that follows (from Etsy's original Readme)...
+
 Etsy Dashboards
 ----------------------
 

@@ -43,37 +43,37 @@ $tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=web}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
-<?
-$tsd = new Tsd($time);
-$tsd->addMetric('sum:1m-avg:rate:apache.stats.served.kbytes{cluster=web}');
-echo $tsd->getDashboardHTML(500, 250);
-?>
-
 <h1>Hits and Response Times (<?php echo Dashboard::displayTime($time) ?>)</h1>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('sum:store.latency.hits{page=sales}');
+$tsd->addMetric('sum:analytics.apache.page.count{page_type=_sales}');
+$tsd->addMetric('sum:analytics.apache.page.count{utm_source=Daily,page_type=_sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=all-sales}');
+$tsd->addMetric('avg:analytics.apache.page.serve.80{page_type=_all-sales}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
 
 <?
 $tsd = new Tsd($time);
-$tsd->addMetric('avg:10m-avg:store.latency.percentile_80{page=product}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=200}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=302}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=304}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=404}');
+$tsd->addMetric('sum:analytics.apache.page.code{http_code=500}');
 echo $tsd->getDashboardHTML(500, 250);
 ?>
+
 
 </body>
 </html>
