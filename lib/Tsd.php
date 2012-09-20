@@ -50,13 +50,13 @@ class Tsd {
         $units = array('h' => 'h-ago',
             'd' => 'd-ago',
             'w' => 'w-ago',
-            'm' => 'd-ago',
+            'm' => 'm-ago',
             'y' => 'y-ago',
         );
         preg_match("/^(\d+)([a-z])/", strtolower($this->time), $m);
-        if ($m[2] == 'm') {
-            return '' . ($m[1] * 30) . '' .$units[$m[2]];
-        }
+        //if ($m[2] == 'm') {
+        //    return '' . ($m[1] * 30) . '' .$units[$m[2]];
+        //}
         return $m[1] . $units[$m[2]];
     }
 
@@ -89,6 +89,13 @@ class Tsd {
             . http_build_query($p)
             . '&' . implode('&', $targets)
             . '&png';
+    }
+    
+    /**
+     * 
+     */
+    public function replaceOrAddSampleTime() {
+        
     }
 
     /**

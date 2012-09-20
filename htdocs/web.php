@@ -27,6 +27,12 @@ $show_deploys = (!$hide_deploys);
             <option value="<?= $key ?>" <? if ($key == $time) { echo "selected"; } ?> ><?= $value ?></option>
         <? } ?>
     </select>
+    
+    <select name="sampletime">
+        <? foreach (($times) as $key => $value) { ?>
+            <option value="<?= $key ?>" <? if ($key == $time) { echo "selected"; } ?> ><?= $value ?></option>
+        <? } ?>
+    </select>
 </form>
 
 <h1>Web Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
