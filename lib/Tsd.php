@@ -42,6 +42,13 @@ class Tsd {
             $this->metrics[] = $metric;
         }
     }
+    
+    /**
+     * Call this if you want to clear metrics and start from scratch
+     */
+    public function clearMetrics() {
+        $this->metrics[] = array();
+    }
 
     /**
      * Convert Dashboard time period to a value usable by Tsd URLs.

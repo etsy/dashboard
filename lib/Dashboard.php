@@ -18,6 +18,17 @@ class Dashboard {
             '4w' => '4 weeks',
         );
     }
+    
+    public static function getSampleTimes() {
+        return array(
+            '' => 'Default',
+            '5m' => '5 miinutes',
+            '20m' => '20 miinutes',
+            '1h' => '1 hour',
+            '1d' => '1 day',
+            '1w' => '1 week',
+        );
+    }
 
     public static function displayTime($time) {
         $units = array('m' => 'minute',
