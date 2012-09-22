@@ -3,13 +3,9 @@
     Created on : Sep 20, 2012, 10:41:26 AM
     Author     : bmayes
     Description:
-        Purpose of the stylesheet follows.
+        Setup the 2 column layout and style the page.
 */
 
-/* 
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
-*/
 
 #container
 {
@@ -40,12 +36,12 @@ float: left;
 width: 160px;
 margin: 0;
 padding: 1em;
+background-color:#ebf4fb;
 }
 
 #content
 {
 margin-left: 200px;
-border-left: 1px solid gray;
 padding: 1em;
 }
 
@@ -61,3 +57,23 @@ border-top: 1px solid gray;
 
 #leftnav p { margin: 0 0 1em 0; }
 #content h2 { margin: 0 0 .5em 0; }
+
+.myform{
+margin:0 auto;
+padding:14px;
+}
+/* ----------- stylized ----------- */
+    #stylized label{
+    display:block;
+    text-align:left;
+    width:140px;
+    float:left;
+    }
+
+    #stylized input{
+    float:left;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:200px;
+    margin:2px 0 20px 10px;
+    }

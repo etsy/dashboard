@@ -5,8 +5,8 @@ require_once dirname(dirname(__FILE__)) . '/lib/bootstrap.php';
 // Get the values from the GET/POST
 $graphTime = !empty($_GET['time']) ? $_GET['time'] : "1h";
 
-
-$template = new GraphContainer($graphTime);
+$title = "Web Cluster";
+$template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 
     
