@@ -1,4 +1,5 @@
 var image_index = 0;
+var left_nav_hidden = 0;
 var default_refresh_timeout = 4000;
 var refresh_timeout = (typeof refresh_timeout !== 'undefined' ? refresh_timeout : default_refresh_timeout);
 
@@ -52,5 +53,17 @@ $(document).ready(function() {
 	$("#controls select, #controls input").change(function() {
 		$("#controls").submit();
 	});
+        
+        $("button").click(function(){
+            $("#leftnav").toggle('slow');
+            if ( left_nav_hidden == 0 ) {
+                $("#content").css('margin-left', '10px');
+                left_nav_hidden = 1;
+            } else {
+                $("#content").css('margin-left', '200px');
+                left_nav_hidden = 0;
+            }
+        });
 });
+
 

@@ -32,17 +32,21 @@ margin: 0;
 
 #leftnav
 {
-float: left;
-width: 160px;
-margin: 0;
-padding: 1em;
-background-color:#ebf4fb;
+    float: left;
+    width: 160px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 2px;
+    padding: 1em;
+    background-color: #ddd;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
 }
 
 #content
 {
-margin-left: 200px;
-padding: 1em;
+    margin-left: 200px;
+    padding: 1em;
 }
 
 #footer
@@ -50,9 +54,11 @@ padding: 1em;
 clear: both;
 margin: 0;
 padding: .5em;
+/*
 color: #333;
 background-color: #ddd;
 border-top: 1px solid gray;
+*/
 }
 
 #leftnav p { margin: 0 0 1em 0; }
