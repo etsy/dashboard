@@ -12,19 +12,33 @@
     <hr/>
     <h3>Traffic</h3>
     <ul>
-        <li><a href="db_king.php">king</a></li>
+        <li><a href="mysql_login.php">Logins</a></li>
+        <li><a href="apache_traffic.php">Web Traffic</a></li>
+    </ul>
+    <h3>Site Performance</h3>
+    <ul>
+        <li><a href="apache_perf_50.php">Page Serve 50</a></li>
+        <li><a href="apache_perf_80.php">Page Serve 80</a></li>
+        <li><a href="apache_perf_99.php">Page Serve 99</a></li>
+    </ul>
+    <h3>DB Tier (King)</h3>
+    <ul>
+        <li><a href="db_king_system.php">System Stats</a></li>
+        <li><a href="db_king_mysql.php">MySql</a></li>
     </ul>
     
-    <h3>Database</h3>
+    <h3>Web Tier</h3>
     <ul>
-        <li><a href="db_king.php">king</a></li>
+        <li><a href="web_system.php">System Stats</a></li>
+        <li><a href="web_mc_data.php">Memcached Data</a></li>
+        <li><a href="web_mc_sess.php">Memcached Session</a></li>
+        <li><a href="rails_ewok.php">Rails - ewok</a></li>
+        <li><a href="rails_ab.php">Rails - ab</a></li>
     </ul>
     
-    <h3>Other Reports</h3>
+    <h3>MQ Tier</h3>
     <ul>
-        <li><a href="market.php">Marketing</a></li>
-        <li><a href="web.php">Web Performance</a></li>
-        <li><a href="db.php">DB Performance</a></li>
+        <li><a href="mq_system.php">System Stats</a></li>
     </ul>
 </div>
 

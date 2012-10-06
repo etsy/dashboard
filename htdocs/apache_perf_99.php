@@ -5,11 +5,13 @@ require_once dirname(dirname(__FILE__)) . '/lib/bootstrap.php';
 // Get the values from the GET/POST
 $graphTime = !empty($_GET['time']) ? $_GET['time'] : "1h";
 
-$title = "Apache Traffic";
+$title = "Apache Page Serve Time - 50th Percentile";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 $graphWidth = 900;
 $graphHeight = 550;
+
+$perf_percent = "99";
 
     
 /*
@@ -17,52 +19,52 @@ $graphHeight = 550;
  */
         
 {
-    $graphName = "Total Page Views - per minute";
+    $graphName = "All Page Serve Time (ms) - $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Page Views by web server - per minute";
+    $graphName = "All Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{host=*}');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{host=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /sales Page views - per minute";
+    $graphName = "/sales Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=_sales}');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{page_type=_sales}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /product Page views - per minute";
+    $graphName = "/product Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=_product}');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{page_type=_product}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /add-to-cart-ajax.json Page views - per minute";
+    $graphName = "/add-to-cart-ajax.json Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=_add-to-cart-ajax.json}');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{page_type=_add-to-cart-ajax.json}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 
 {
-    $graphName = "Total DS Level 1 Page views - per minute";
+    $graphName = "DS Level 1 Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=ds_l1}');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{page_type=ds_l1}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total DS Level 2 Page views - per minute";
+    $graphName = "DS Level 2 Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=ds_l2}');
+    $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{page_type=ds_l2}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 

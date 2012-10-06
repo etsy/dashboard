@@ -17,20 +17,6 @@ $graphHeight = 550;
  */
         
 {
-    $graphName = "CPU Total use %";
-    $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=db,type=total,host=*}');
-    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
-}
-
-{
-    $graphName = "Load Avg. last minute";
-    $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=db,host=*}');
-    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
-}
-
-{
     $graphName = "king-prod-db01 query types";
     $tsd = new Tsd($graphTime);
     $tsd->addMetric('sum:1m-avg:rate:mysql.com_select{host=sac-prod-db-01.unix.newokl.com}');
