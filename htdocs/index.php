@@ -32,4 +32,9 @@ $template->setGraphTime($graphTime);
     $template->addGraph($tsd->getDashboardHTML(500, 250));
 }
 
+
+
+
+
+
 $template->render();

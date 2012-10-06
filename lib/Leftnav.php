@@ -10,7 +10,15 @@
         <br/>
     </form>
     <hr/>
+    <h3>Traffic</h3>
+    <ul>
+        <li><a href="db_king.php">king</a></li>
+    </ul>
     
+    <h3>Database</h3>
+    <ul>
+        <li><a href="db_king.php">king</a></li>
+    </ul>
     
     <h3>Other Reports</h3>
     <ul>

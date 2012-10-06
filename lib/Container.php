@@ -14,8 +14,10 @@ class GraphContainer {
         $this->view['prettytime'] = Dashboard::displayTime($time);
     }
 
-    public function addGraph($urlOfGraph) {
-        $this->view['body'][] = $urlOfGraph;
+    public function addGraph($urlOfGraph, $name) {
+        $graphAry["url"] = "$urlOfGraph";
+        $graphAry["name"] = $name;
+        $this->view['graphSet'][] = $graphAry;
     }
     
     public function addGraphGroupHeading($title)
@@ -38,7 +40,15 @@ class GraphContainer {
         $this->view['leftnav'] = ob_get_contents();
         ob_end_clean();
     }
-
+    
+    protected function renderGraphInstance() {
+        ob_start();
+        $view = $this->view;
+        include_once dirname(__FILE__) . '/GraphInstnace.php';
+        $this->view['graphinstance'] = ob_get_contents();
+        ob_end_clean();
+    }
+    
     public function render() {
         
         // Get the nav contents.

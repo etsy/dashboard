@@ -29,23 +29,28 @@ $show_deploys = (!$hide_deploys);
     </select>
 </form>
 
-<h1>CPU Total Use Percent by host (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h1>System Metrics</h1>
+
+<h2>CPU Total Use Percent by host (<?php echo Dashboard::displayTime($time) ?>)</h2>
 
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=db,type=total,host=*}');
-echo $tsd->getDashboardHTML(1200, 700);
+echo $tsd->getDashboardHTML(900, 500);
 ?>
 
-<h1>Load Avg. Last Min (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h2>Load Avg. Last Min (<?php echo Dashboard::displayTime($time) ?>)</h2>
 
 <?
 $tsd = new Tsd($time);
 $tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=db,host=*}');
-echo $tsd->getDashboardHTML(1200, 700);;
+echo $tsd->getDashboardHTML(900, 500);;
 ?>
+<BR>
+<BR>
+<h1>MySql Metrics</h1>
 
-<h1>king-prod-db01 Query Count (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h2>king-prod-db01 Query Count (<?php echo Dashboard::displayTime($time) ?>)</h2>
 
 <?
 $tsd = new Tsd($time);
@@ -57,10 +62,10 @@ $tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-01.unix
 $tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-01.unix.newokl.com}');
 $tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-01.unix.newokl.com}');
 
-echo $tsd->getDashboardHTML(1200, 700);
+echo $tsd->getDashboardHTML(900, 500);
 ?>
 
-<h1>king-prod-db02 Query Count (<?php echo Dashboard::displayTime($time) ?>)</h1>
+<h2>king-prod-db02 Query Count (<?php echo Dashboard::displayTime($time) ?>)</h2>
 
 <?
 $tsd = new Tsd($time);
@@ -72,8 +77,53 @@ $tsd->addMetric('sum:1m-avg:rate:mysql.com_update_multi{host=sac-prod-db-02.unix
 $tsd->addMetric('sum:1m-avg:rate:mysql.com_load{host=sac-prod-db-02.unix.newokl.com}');
 $tsd->addMetric('sum:1m-avg:rate:mysql.com_delete{host=sac-prod-db-02.unix.newokl.com}');
 
-echo $tsd->getDashboardHTML(1200, 700);
+echo $tsd->getDashboardHTML(900, 500);
 ?>
+
+<h2>Replication - seconds behind master (<?php echo Dashboard::displayTime($time) ?>)</h2>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:mysql.slave.seconds_behind_master{host=*}');
+echo $tsd->getDashboardHTML(900, 500);
+?>
+
+<h2>SELECT type - select_scan</h2>
+
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:rate:mysql.select_scan{host=*}');
+echo $tsd->getDashboardHTML(900, 500);
+?>
+
+<h2>SELECT type - select_range_check</h2>
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:rate:mysql.select_range_check{host=*}');
+echo $tsd->getDashboardHTML(900, 500);
+?>
+
+<h2>SELECT type - select_range</h2>
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:rate:mysql.select_range{host=*}');
+echo $tsd->getDashboardHTML(900, 500);
+?>
+
+<h2>SELECT type - select_full_range_join</h2>
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:rate:mysql.select_full_range_join{host=*}');
+echo $tsd->getDashboardHTML(900, 500);
+?>
+
+<h2>SELECT type - select_full_join</h2>
+<?
+$tsd = new Tsd($time);
+$tsd->addMetric('sum:rate:mysql.select_full_join{host=*}');
+echo $tsd->getDashboardHTML(900, 500);
+?>
+
 
 
 </body>

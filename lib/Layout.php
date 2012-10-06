@@ -26,13 +26,24 @@
 
         <div id="content">
             <?php
-                if ( array_key_exists('body', $view ) ) {
-                    foreach ( $view['body'] as $graph ) {
-                        print("$graph\n");
+                if  ( array_key_exists('graphSet', $view ) ) {
+                    foreach( $view['graphSet'] as $set){
+                        $gurl = "$set[url]";
+                        $gname = "$set[name]";
+                        echo "<table BORDER=3 CELLPADDING=4>";
+                        echo "  <tr>";
+                        echo "      <td><b>$gname<b></td>";
+                        echo "  </tr>";
+                        echo "  <tr>";
+                        echo "      <td>$gurl</td>";
+                        echo "  </tr>";
+                        echo "</table>";
+                        echo "</br>";
                     }
-                } else {
-                    echo "no graphs";
-                }
+                } else  {
+                         echo "no graphs";
+                  }
+                ?>
             ?>
         </div>
 
