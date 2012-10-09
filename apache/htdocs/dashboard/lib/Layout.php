@@ -30,6 +30,7 @@
                     foreach( $view['graphSet'] as $set){
                         $gurl = "$set[url]";
                         $gname = "$set[name]";
+			echo "<span class='tsdGraph'>";
                         echo "<table BORDER=3 CELLPADDING=4>";
                         echo "  <tr>";
                         echo "      <td><b>$gname<b></td>";
@@ -38,7 +39,7 @@
                         echo "      <td>$gurl</td>";
                         echo "  </tr>";
                         echo "</table>";
-                        echo "</br>";
+			echo "</span>";
                     }
                 } else  {
                          echo "no graphs";
