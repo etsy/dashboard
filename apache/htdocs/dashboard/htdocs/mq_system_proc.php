@@ -9,33 +9,34 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "MQ Processor Metrics";
+$graphDownSample = !empty($_GET['downsample']) ? $_GET['downsample'] : "1m";
+
+$title = "MQ System Metrics - $graphDownSample Downsample";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
-
     
 /*
  * <h1>Web Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
  */
         
 {
-    $graphName = "CPU Total use %";
+    $graphName = "CPU Total use % - $graphDownSample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=mq,type=total,host=*}');
+    $tsd->addMetric("avg:$graphDownSample-avg:rate:proc.stat.cpu{cluster=mq,type=total,host=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Load Avg. last minute";
+    $graphName = "Load Avg. last minute - $graphDownSample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=mq,host=*}');
+    $tsd->addMetric("avg:$graphDownSample-avg:proc.loadavg.1min{cluster=mq,host=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "CPU IOWAIT % by server";
+    $graphName = "CPU IOWAIT % by server - $graphDownSample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=mq,type=iowait,host=*}');
+    $tsd->addMetric("avg:$graphDownSample-avg:rate:proc.stat.cpu{cluster=mq,type=iowait,host=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
