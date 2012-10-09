@@ -9,12 +9,9 @@ class GraphContainer {
 
     public function __construct($time, $title="No Title") {
         $this->view = array();
-        
         $this->view['title'] = $title;
         $this->view['times'] = Dashboard::getTimes();
         $this->view['size'] = Dashboard::getChartSize();
-        //$this->view['width'] = Dashboard::getChartWidth();
-        //$this->view['height'] = Dashboard::getChartHeight();
         $this->view['sampletimes'] = Dashboard::getSampleTimes();
         $this->view['prettytime'] = Dashboard::displayTime($time);
     }

@@ -9,33 +9,39 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "MQ Processor Metrics";
+$title = "DB (King) innodb Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
-
     
 /*
  * <h1>Web Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
  */
         
 {
-    $graphName = "CPU Total use %";
+    $graphName = "innodb locks os_waits";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=mq,type=total,host=*}');
+    $tsd->addMetric('sum:1m-avg:rate:mysql.innodb.locks.os_waits{cluster=db,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Load Avg. last minute";
+    $graphName = "innodb locks spin_waits";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:proc.loadavg.1min{cluster=mq,host=*}');
+    $tsd->addMetric('sum:1m-avg:rate:mysql.innodb.locks.spin_waits{cluster=db,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "CPU IOWAIT % by server";
+    $graphName = "innodb buffer pool read requests";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=mq,type=iowait,host=*}');
+    $tsd->addMetric('sum:1m-avg:rate:mysql.innodb_buffer_pool_read_requests{cluster=db,host=*}');
+    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
+}
+
+{
+    $graphName = "innodb buffer pool write requests";
+    $tsd = new Tsd($graphTime);
+    $tsd->addMetric('sum:1m-avg:rate:mysql.innodb_buffer_pool_write_requests{cluster=db,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 

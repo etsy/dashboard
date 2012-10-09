@@ -9,7 +9,7 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "Apache Traffic";
+$title = "Web Tier Network Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
     
@@ -18,54 +18,45 @@ $template->setGraphTime($graphTime);
  */
         
 {
-    $graphName = "Total Page Views - per minute";
+    $graphName = 'Total Bytes IN';
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count');
+    $tsd->addMetric('avg:rate:proc.net.bytes{cluster=web,host=*,direction=in}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Page Views by web server - per minute";
+    $graphName = 'Total Bytes OUT';
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{host=*}');
+    $tsd->addMetric('avg:rate:proc.net.bytes{cluster=web,host=*,direction=out}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /sales Page views - per minute";
+    $graphName = 'TCP Congestion Recovery';
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=_sales}');
+    $tsd->addMetric('avg:rate:net.stat.tcp.congestion.recovery{cluster=web,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /product Page views - per minute";
+    $graphName = 'TCP Connections Aborted';
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=_product}');
+    $tsd->addMetric('avg:rate:net.stat.tcp.abort{cluster=web,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /add-to-cart-ajax.json Page views - per minute";
+    $graphName = 'TCP Packetloss Recovery';
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=_add-to-cart-ajax.json}');
-    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
-}
-
-
-{
-    $graphName = "Total DS Level 1 Page views - per minute";
-    $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=ds_l1}');
+    $tsd->addMetric('avg:rate:net.stat.tcp.packetloss.recovery{cluster=web,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total DS Level 2 Page views - per minute";
+    $graphName = 'TCP Failed Accept';
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:1m-sum:analytics.apache.ten_sec.page.count{page_type=ds_l2}');
+    $tsd->addMetric('avg:rate:net.stat.tcp.failed_accept{cluster=web,host=*}');
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
-
 
 $template->render();

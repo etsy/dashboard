@@ -4,7 +4,7 @@ require_once dirname(dirname(__FILE__)) . '/lib/bootstrap.php';
 
 // Get the values from the GET/POST
 $graphTime = !empty($_GET['time']) ? $_GET['time'] : "1h";
-$graphSize = !empty($_GET['size']) ? $_GET['size'] : "1000x700";
+$graphSize = !empty($_GET['size']) ? $_GET['size'] : "700x450";
 $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];

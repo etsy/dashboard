@@ -27,6 +27,7 @@ class Dashboard {
 		return array(
 			'400x250' => array(400,250),
 			'600x400' => array(600,400),
+			'700x450' => array(700,450),
 			'800x500' => array(800,500),
 			'900x600' => array(900,600),
 			'1000x700' => array(1000,700),
@@ -36,8 +37,10 @@ class Dashboard {
 
 	public static function getChartSize() {
 		return array(
+			"" => 'size',
 			'400x250' => '400x250',
 			'600x400' => '600x400',
+			'700x450' => '700x450',
 			'800x500' => '800x500',
 			'900x600' => '900x600',
 			'1000x700' => '1000x700',
