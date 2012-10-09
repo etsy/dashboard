@@ -10,6 +10,7 @@ class GraphContainer {
     public function __construct($time, $title="No Title") {
         $this->view = array();
         $this->view['title'] = $title;
+		$this->view['downsample'] = Dashboard::getDownsampleTimes();
         $this->view['times'] = Dashboard::getTimes();
         $this->view['size'] = Dashboard::getChartSize();
         $this->view['sampletimes'] = Dashboard::getSampleTimes();

@@ -64,7 +64,7 @@ $perf_percent = "50";
 }
 
 {
-    $graphName = "DS Level 2 Page Serve Time (ms) per serve- $perf_percent %th Percentile";
+    $graphName = "DS Level 2 Page Serve Time (ms) per serve- $perf_percent %";
     $tsd = new Tsd($graphTime);
     $tsd->addMetric("avg:analytics.apache.ten_sec.page.serve.$perf_percent{page_type=ds_l2}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);

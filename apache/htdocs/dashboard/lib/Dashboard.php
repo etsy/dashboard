@@ -23,6 +23,20 @@ class Dashboard {
         );
     }
 
+	public static function getDownsampleTimes() {
+        return array(
+            '' => 'Downsample',
+            '1m' => '1 minutes',
+            '5m' => '5 minutes',
+			'10m' => '10 minutes',
+			'30m' => '30 minutes',
+            '1h' => '1 hour',
+            '4h' => '4 hours',
+            '12h' => '12 hours',
+            '1d' => '1 day',
+        );
+    }
+
 	public static function getWidthHeight() {
 		return array(
 			'400x250' => array(400,250),

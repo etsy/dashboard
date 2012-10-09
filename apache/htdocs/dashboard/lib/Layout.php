@@ -13,7 +13,7 @@
 
         <div id="top">
             <div id="status"></div>
-            <h1><?php echo $view['title']; ?> - <?php echo $view['time']; ?></h1>
+            <h1><?php echo $view['title']; ?> - <?php echo $view['time']; ?> Graph Time</h1>
             <div style="float: right;"><button>Show/Hide</button></div>
         </div>
 
