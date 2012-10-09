@@ -17,10 +17,13 @@
     </form>
     <hr/>
     <h3>Traffic</h3>
-        <li><a href="mysql_login.php">Logins</a></li>
-        <li><a href="apache_traffic.php">Web Traffic</a></li>
+		<b>Tracking DB</b>
+        	<li><a href="mysql_login.php">Login</a></li>
+		<b>Web Server</b>
+        	<li><a href="apache_traffic.php">Web Traffic</a></li>
     <hr >
     <h3>Site Performance</h3>
+
     	<b>Page Serve Time</b>
     		<li><a href="apache_perf_50.php">Page Serve 50</a></li>
         	<li><a href="apache_perf_80.php">Page Serve 80</a></li>
