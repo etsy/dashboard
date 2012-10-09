@@ -28,7 +28,7 @@
     <hr >
     <h3>DB Tier (King)</h3>
     	<b>System</b>
-    		<li><a href="db_king_system.php">Processor</a></li>
+    		<li><a href="db_king_system_proc.php">Processor</a></li>
     	<b>Mysql</b>
         	<li><a href="db_king_mysql_query.php">Query Usage</a></li>
     <hr >
@@ -44,6 +44,6 @@
     <hr >
     <h3>MQ Tier</h3>
 		<b>System</b>
-        	<li><a href="mq_system.php">Processor</a></li>
+        	<li><a href="mq_system_proc.php">Processor</a></li>
 </div>
 
