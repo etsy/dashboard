@@ -24,13 +24,13 @@
         </div>
 
 
-		<div id="content">
+        <div id="content">
             <?php
                 if  ( array_key_exists('graphSet', $view ) ) {
                     foreach( $view['graphSet'] as $set){
                         $gurl = "$set[url]";
                         $gname = "$set[name]";
-						//echo "<div id="content">"
+			echo "<span class='tsdGraph'>";
                         echo "<table BORDER=3 CELLPADDING=4>";
                         echo "  <tr>";
                         echo "      <td><b>$gname<b></td>";
@@ -39,14 +39,14 @@
                         echo "      <td>$gurl</td>";
                         echo "  </tr>";
                         echo "</table>";
-                        echo "</br>";
-						echo "</div>"
+			echo "</span>";
                     }
                 } else  {
                          echo "no graphs";
                   }
              ?>
-		</div>	
+        </div>
+
 
         <div id="footer">
             &nbsp;
