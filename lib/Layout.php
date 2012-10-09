@@ -43,8 +43,7 @@
                 } else  {
                          echo "no graphs";
                   }
-                ?>
-            ?>
+             ?>
         </div>
 
 

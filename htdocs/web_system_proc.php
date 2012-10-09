@@ -4,13 +4,14 @@ require_once dirname(dirname(__FILE__)) . '/lib/bootstrap.php';
 
 // Get the values from the GET/POST
 $graphTime = !empty($_GET['time']) ? $_GET['time'] : "1h";
+$graphSize = !empty($_GET['size']) ? $_GET['size'] : "1000x700";
+$sizeArray = Dashboard::getWidthHeight();
+$graphWidth = $sizeArray[$graphSize][0];
+$graphHeight = $sizeArray[$graphSize][1];
 
 $title = "Web Tier System Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
-$graphWidth = 900;
-$graphHeight = 550;
-
     
 /*
  * <h1>Web Cluster (<?php echo Dashboard::displayTime($time) ?>)</h1>
@@ -19,6 +20,7 @@ $graphHeight = 550;
  {
      $graphName = "CPU Total use % Aggregate";
      $tsd = new Tsd($graphTime);
+	 //$graphWidth = !empty($_GET['width']) ? $_GET['width'] : 1000;
      $tsd->addMetric('avg:1m-avg:rate:proc.stat.cpu{cluster=web,type=total}');
      $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
  }

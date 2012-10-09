@@ -15,9 +15,55 @@ class Dashboard {
             '18h' => '18 hours',
             '1d' => '1 day',
             '2d' => '2 days',
+            '4d' => '4 days',
             '1w' => '1 week',
             '2w' => '2 weeks',
-            '4w' => '4 weeks',
+            '4w' => '1 month',
+            '8w' => '2 months',
+        );
+    }
+
+	public static function getWidthHeight() {
+		return array(
+			'400x250' => array(400,250),
+			'600x400' => array(600,400),
+			'800x500' => array(800,500),
+			'900x600' => array(900,600),
+			'1100x700' => array(1100,700),
+			'1300x900' => array(1300,900),
+		);
+	}
+
+	public static function getChartSize() {
+		return array(
+			'' => 'Size',
+			'400x250' => '400x250',
+			'600x400' => '600x400',
+			'800x500' => '800x500',
+			'900x600' => '900x600',
+			'1100x700' => '1100x700',
+			'1300x900' => '1300x900',
+		);
+	}
+    
+    public static function getWidth() {
+        return array(
+            //'' => 'Time',
+            '10m' => '10 minutes',
+            '30m' => '30 minutes',
+            '1h' => '1 hour',
+            '2h' => '2 hours',
+            '4h' => '4 hours',
+            '8h' => '8 hours',
+            '12h' => '12 hours',
+            '18h' => '18 hours',
+            '1d' => '1 day',
+            '2d' => '2 days',
+            '4d' => '4 days',
+            '1w' => '1 week',
+            '2w' => '2 weeks',
+            '4w' => '1 month',
+            '8w' => '2 months',
         );
     }
     

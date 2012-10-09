@@ -8,37 +8,42 @@
             <? } ?>
         </select>
         <br/>
+		<label for="size">Graph Size</label>
+		<select name="size">
+		    <? foreach (($view['size']) as $value) { ?>
+		        <option value="<?= $value ?>" <? if ($value == $view['size']) { echo "selected"; } ?> ><?= $value ?></option>
+		    <? } ?>
+		</select>
     </form>
     <hr/>
     <h3>Traffic</h3>
-    <ul>
         <li><a href="mysql_login.php">Logins</a></li>
         <li><a href="apache_traffic.php">Web Traffic</a></li>
-    </ul>
+    <hr >
     <h3>Site Performance</h3>
-    <ul>
-        <li><a href="apache_perf_50.php">Page Serve 50</a></li>
-        <li><a href="apache_perf_80.php">Page Serve 80</a></li>
-        <li><a href="apache_perf_99.php">Page Serve 99</a></li>
-    </ul>
+    	<b>Page Serve Time</b>
+    		<li><a href="apache_perf_50.php">Page Serve 50</a></li>
+        	<li><a href="apache_perf_80.php">Page Serve 80</a></li>
+        	<li><a href="apache_perf_99.php">Page Serve 99</a></li>
+    <hr >
     <h3>DB Tier (King)</h3>
-    <ul>
-        <li><a href="db_king_system.php">System Stats</a></li>
-        <li><a href="db_king_mysql.php">MySql</a></li>
-    </ul>
-    
+    	<b>System</b>
+    		<li><a href="db_king_system.php">Processor</a></li>
+    	<b>Mysql</b>
+        	<li><a href="db_king_mysql_query.php">Query Usage</a></li>
+    <hr >
     <h3>Web Tier</h3>
-    <ul>
-        <li><a href="web_system.php">System Stats</a></li>
-        <li><a href="web_mc_data.php">Memcached Data</a></li>
-        <li><a href="web_mc_sess.php">Memcached Session</a></li>
-        <li><a href="rails_ewok.php">Rails - ewok</a></li>
-        <li><a href="rails_ab.php">Rails - ab</a></li>
-    </ul>
-    
+    	<b>System</b>
+    		<li><a href="web_system_proc.php">Processor</a></li>
+        <b>Memcached</b>
+        	<li><a href="web_mc_data.php">Data</a></li>
+        	<li><a href="web_mc_sess.php">Session</a></li>
+        <b>Rails</b>
+        	<li><a href="rails_ewok.php">ewok</a></li>
+        	<li><a href="rails_ab.php">ab_test</a></li>
+    <hr >
     <h3>MQ Tier</h3>
-    <ul>
-        <li><a href="mq_system.php">System Stats</a></li>
-    </ul>
+		<b>System</b>
+        	<li><a href="mq_system.php">Processor</a></li>
 </div>
 

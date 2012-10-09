@@ -5,11 +5,16 @@ class GraphContainer {
 
     private $view;
 
+
+
     public function __construct($time, $title="No Title") {
         $this->view = array();
         
         $this->view['title'] = $title;
         $this->view['times'] = Dashboard::getTimes();
+        $this->view['size'] = Dashboard::getChartSize();
+        //$this->view['width'] = Dashboard::getChartWidth();
+        //$this->view['height'] = Dashboard::getChartHeight();
         $this->view['sampletimes'] = Dashboard::getSampleTimes();
         $this->view['prettytime'] = Dashboard::displayTime($time);
     }
@@ -25,9 +30,17 @@ class GraphContainer {
         $this->view['body'][] = $title; 
     }
     
+    public function addName($name) {
+        $this->view['name'][] = $name;
+    }
+    
     public function setGraphTime($time) {
         $this->view['time'] = $time;
     }
+    
+    //public function setGraphWidth($width) {
+    //    $this->view['width'] = $width;
+    //}
     
     public function setDownsampleTime($time) {
         $this->view['downsampletime'] = $time;
