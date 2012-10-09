@@ -52,5 +52,7 @@
         	<li><a href="mq_system_proc.php">Processor</a></li>
 			<li><a href="mq_system_disk.php">Disk</a></li>
 			<li><a href="mq_system_net.php">Network</a></li>
+		<b>Queue</b>
+			<li><a href="mq_queue.php">Queue Length</a></li>
 </div>
 
