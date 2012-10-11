@@ -6,11 +6,13 @@ require_once dirname(dirname(__FILE__)) . '/lib/bootstrap.php';
 $graphTime = !empty($_GET['time']) ? $_GET['time'] : "1h";
 $graphSize = !empty($_GET['size']) ? $_GET['size'] : "700x450";
 $graphDownSample = !empty($_GET['downsample']) ? $_GET['downsample'] : "1m";
+#$graphDownSampleType = !empty($_GET['downsampletype']) ? $_GET['downsampletype'] : "sum";
 $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "Apache Traffic - $graphDownSample Downsample";
+$graphInterval = "10 seconds";
+$title = "Apache Traffic per $graphInterval - $graphDownSample downsample";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
     
@@ -19,52 +21,52 @@ $template->setGraphTime($graphTime);
  */
         
 {
-    $graphName = "Total Page Views - $graphDownSample";
+    $graphName = "Total Page Views per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Page Views by web server - $graphDownSample";
+    $graphName = "Page Views by web server per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count{host=*}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count{host=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /sales Page views - $graphDownSample";
+    $graphName = "Total /sales Page views per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count{page_type=_sales}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count{page_type=_sales}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /product Page views - $graphDownSample";
+    $graphName = "Total /product Page views per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count{page_type=_product}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count{page_type=_product}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total /add-to-cart-ajax.json Page views - $graphDownSample";
+    $graphName = "Total /add-to-cart-ajax.json Page views per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count{page_type=_add-to-cart-ajax.json}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count{page_type=_add-to-cart-ajax.json}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 
 {
-    $graphName = "Total DS Level 1 Page views - $graphDownSample";
+    $graphName = "Total DS Level 1 Page views per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count{page_type=ds_l1}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count{page_type=ds_l1}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Total DS Level 2 Page views - $graphDownSample";
+    $graphName = "Total DS Level 2 Page views per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-sum:analytics.apache.ten_sec.page.count{page_type=ds_l2}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.apache.ten_sec.page.count{page_type=ds_l2}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 

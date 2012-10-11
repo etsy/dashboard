@@ -14,12 +14,14 @@
 		        <option value="<?= $key ?>" <? if ($key == $view['size']) { echo "selected"; } ?> ><?= $value ?></option>
 		    <? } ?>
 		</select>
+		<br/>
 		<label for="downsample"><b>Downsample Time</b></label>
 		<select name="downsample">
 		    <? foreach (($view['downsample'])  as $key => $value) { ?>
 		        <option value="<?= $key ?>" <? if ($key == $view['downsample']) { echo "selected"; } ?> ><?= $value ?></option>
 		    <? } ?>
 		</select>
+		<br/>
     </form>
     <hr/>
     <h3>Traffic</h3>

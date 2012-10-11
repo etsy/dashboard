@@ -11,6 +11,7 @@ class GraphContainer {
         $this->view = array();
         $this->view['title'] = $title;
 		$this->view['downsample'] = Dashboard::getDownsampleTimes();
+		$this->view['downsampletype'] = Dashboard::getDownsampleType();
         $this->view['times'] = Dashboard::getTimes();
         $this->view['size'] = Dashboard::getChartSize();
         $this->view['sampletimes'] = Dashboard::getSampleTimes();

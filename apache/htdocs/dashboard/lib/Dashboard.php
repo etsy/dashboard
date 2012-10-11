@@ -25,7 +25,7 @@ class Dashboard {
 
 	public static function getDownsampleTimes() {
         return array(
-            '' => 'Downsample',
+            '' => 'Time',
             '1m' => '1 minutes',
             '5m' => '5 minutes',
 			'10m' => '10 minutes',
@@ -35,6 +35,15 @@ class Dashboard {
             '12h' => '12 hours',
             '1d' => '1 day',
         );
+	}
+
+	public static function getDownsampleType() {
+        return array(
+            '' => 'Type',
+            'avg' => 'avg',
+            'sum' => 'sum',
+        );
+
     }
 
 	public static function getWidthHeight() {

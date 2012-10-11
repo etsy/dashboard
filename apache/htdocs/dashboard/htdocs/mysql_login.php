@@ -9,7 +9,10 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "Logins (from tracking DB)";
+$graphDownSample = !empty($_GET['downsample']) ? $_GET['downsample'] : "1m";
+
+$graphInterval = "1 minute";
+$title = "Logins (from tracking DB) per $graphInterval - $graphDownSample downsample";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 
@@ -19,30 +22,38 @@ $template->setGraphTime($graphTime);
  */
         
 {
-    $graphName = "All Logins";
+    $graphName = "All Logins per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric('sum:analytics.mysql.login.utm_medium.count');
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.mysql.login.utm_medium.count");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Logins by utm_medium: email";
+    $graphName = "Logins by shopper tier per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("avg:analytics.mysql.login.utm_medium.count{utm_medium=email}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.mysql.login.shopper_tier_id.count{shopper_tier_id=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Logins by utm_medium: display";
+    $graphName = "Logins by utm_medium: email per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("avg:analytics.mysql.login.utm_medium.count{utm_medium=display}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.mysql.login.utm_medium.count{utm_medium=email}");
+    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
+}
+
+
+{
+    $graphName = "Logins by utm_medium: display per $graphInterval - $graphDownSample downsample";
+    $tsd = new Tsd($graphTime);
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.mysql.login.utm_medium.count{utm_medium=display}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
-    $graphName = "Logins by utm_medium: search";
+    $graphName = "Logins by utm_medium: search per $graphInterval - $graphDownSample downsample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("avg:analytics.mysql.login.utm_medium.count{utm_medium=search}");
+    $tsd->addMetric("sum:$graphDownSample-avg:analytics.mysql.login.utm_medium.count{utm_medium=search}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
