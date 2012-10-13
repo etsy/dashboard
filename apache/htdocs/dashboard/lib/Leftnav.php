@@ -29,10 +29,14 @@
         <li><a href="apache_traffic.php">Web Traffic</a></li>
     <hr >
     <h3>Site Performance</h3>
-    	<b>Page Serve Time</b>
-    		<li><a href="apache_perf_50.php">Page Serve 50</a></li>
-        	<li><a href="apache_perf_80.php">Page Serve 80</a></li>
-        	<li><a href="apache_perf_99.php">Page Serve 99</a></li>
+    	<b>Page Serve Aggregate</b>
+    		<li><a href="apache_perf_50_agg.php">Page Serve 50</a></li>
+        	<li><a href="apache_perf_80_agg.php">Page Serve 80</a></li>
+        	<li><a href="apache_perf_99_agg.php">Page Serve 99</a></li>
+		<b>Page Serve By Server</b>
+    		<li><a href="apache_perf_50_server.php">Page Serve 50</a></li>
+        	<li><a href="apache_perf_80_server.php">Page Serve 80</a></li>
+        	<li><a href="apache_perf_99_server.php">Page Serve 99</a></li>
     <hr >
     <h3>DB Tier (King)</h3>
     	<b>System</b>
