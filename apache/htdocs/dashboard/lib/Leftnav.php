@@ -58,6 +58,8 @@
         <b>Rails</b>
         	<li><a href="rails_ewok.php">ewok</a></li>
         	<li><a href="rails_ab.php">ab_test</a></li>
+		<b>mysql-proxy</b>
+        	<li><a href="web_mysql-proxy.php">king</a></li>
     <hr >
     <h3>MQ Tier</h3>
 		<b>System</b>
@@ -66,5 +68,7 @@
 			<li><a href="mq_system_net.php">Network</a></li>
 		<b>Queue</b>
 			<li><a href="mq_queue.php">Queue Length</a></li>
+		<b>mysql-proxy</b>
+        	<li><a href="mq_mysql-proxy.php">king</a></li>
 </div>
 
