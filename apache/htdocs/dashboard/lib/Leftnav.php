@@ -43,15 +43,17 @@
     		<li><a href="db_king_system_proc.php">Processor</a></li>
 			<li><a href="db_king_system_disk.php">Disk</a></li>
 			<li><a href="db_king_system_net.php">Network</a></li>
+			<li><a href="db_king_system_mem.php">Memory</a></li>
     	<b>Mysql</b>
         	<li><a href="db_king_mysql_query.php">Summary</a></li>
 			<li><a href="db_king_mysql_innodb.php">innodb</a></li>
     <hr >
-    <h3>Web Tier</h3>
+    <h3>WEB Tier</h3>
     	<b>System</b>
     		<li><a href="web_system_proc.php">Processor</a></li>
 			<li><a href="web_system_disk.php">Disk</a></li>
 			<li><a href="web_system_net.php">Network</a></li>
+			<li><a href="web_king_system_mem.php">Memory</a></li>
         <b>Memcached</b>
         	<li><a href="web_mc_data.php">Data</a></li>
         	<li><a href="web_mc_sess.php">Session</a></li>
@@ -61,11 +63,32 @@
 		<b>mysql-proxy</b>
         	<li><a href="web_mysql-proxy.php">king</a></li>
     <hr >
+	<h3>PWEB Tier</h3>
+    	<b>System</b>
+    		<li><a href="pweb_system_proc.php">Processor</a></li>
+			<li><a href="pweb_system_disk.php">Disk</a></li>
+			<li><a href="pweb_system_net.php">Network</a></li>
+			<li><a href="pweb_king_system_mem.php">Memory</a></li>
+        <b>Memcached (partner)</b>
+        	<li><a href="pweb_mc_data.php">Data</a></li>
+        	<li><a href="pweb_mc_sess.php">Session</a></li>
+        <b>Rails</b>
+        	<li><a href="pweb_rails_pass.php">all passenger</a></li>
+            <li><a href="pweb_rack_partner.php">rack:partner</a></li>
+            <li><a href="pweb_rack_warehouse.php">rack:warehouse</a></li>
+            <li><a href="pweb_rack_kamino.php">rack:kamino</a></li>
+            <li><a href="pweb_rack_nexus.php">rack:nexus</a></li>
+            <li><a href="pweb_rack_nexus_reloaded.php">rack:nexus_rel</a></li>
+            <li><a href="pweb_rack_r2d2.php">rack:r2d2</a></li>
+		<b>mysql-proxy (partner)</b>
+        	<li><a href="pweb_mysql-proxy.php">partner</a></li>
+    <hr >
     <h3>MQ Tier</h3>
 		<b>System</b>
         	<li><a href="mq_system_proc.php">Processor</a></li>
 			<li><a href="mq_system_disk.php">Disk</a></li>
 			<li><a href="mq_system_net.php">Network</a></li>
+			<li><a href="mq_king_system_mem.php">Memory</a></li>
 		<b>Queue</b>
 			<li><a href="mq_queue.php">Queue Length</a></li>
 		<b>mysql-proxy</b>
