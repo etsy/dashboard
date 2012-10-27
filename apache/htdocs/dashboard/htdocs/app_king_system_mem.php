@@ -13,7 +13,7 @@ $graphDownSample = !empty($_GET['downsample']) ? $_GET['downsample'] : "1m";
 $cluster = "app";
 
 
-$title = "$cluster tier Memory Metrics - $graphDownSample Downsample";
+$title = "REFRESH tier Memory Metrics - $graphDownSample Downsample";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
     

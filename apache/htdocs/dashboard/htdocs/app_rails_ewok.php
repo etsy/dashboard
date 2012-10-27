@@ -9,7 +9,7 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "APP Tier Rails - ewok Metrics";
+$title = "REFRESH Tier Rails - ewok Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 

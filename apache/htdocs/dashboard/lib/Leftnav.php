@@ -93,7 +93,8 @@
 			<li><a href="mq_queue.php">Queue Length</a></li>
 		<b>mysql-proxy</b>
         	<li><a href="mq_mysql-proxy.php">king</a></li>
-		<h3>APP Tier</h3>
+    <hr >
+		<h3>REFRESH Tier</h3>
 		<b>System</b>
   		<li><a href="app_system_proc.php">Processor</a></li>
 			<li><a href="app_system_disk.php">Disk</a></li>

@@ -9,7 +9,7 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "APP Tier Rails - ab_test Metrics";
+$title = "REFRESH Tier Rails - ab_test Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 

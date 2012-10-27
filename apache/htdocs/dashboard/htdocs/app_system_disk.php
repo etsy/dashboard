@@ -9,7 +9,7 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "APP Tier Disk Metrics";
+$title = "REFRESH Tier Disk Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
     

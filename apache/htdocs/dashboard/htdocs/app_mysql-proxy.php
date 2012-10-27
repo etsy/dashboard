@@ -10,7 +10,7 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "APP Tier mysql-proxy-process Data - $graphDownSample Downsample";
+$title = "REFRESH Tier mysql-proxy-process Data - $graphDownSample Downsample";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 

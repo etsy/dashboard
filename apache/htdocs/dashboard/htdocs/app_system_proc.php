@@ -11,7 +11,7 @@ $graphHeight = $sizeArray[$graphSize][1];
 
 $graphDownSample = !empty($_GET['downsample']) ? $_GET['downsample'] : "1m";
 
-$title = "APP Tier Processor Metrics - $graphDownSample Downsample";
+$title = "REFRESH Tier Processor Metrics - $graphDownSample Downsample";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
     
