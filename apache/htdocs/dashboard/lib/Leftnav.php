@@ -50,7 +50,7 @@
     <hr >
     <h3>WEB Tier</h3>
     	<b>System</b>
-    		<li><a href="web_system_proc.php">Processor</a></li>
+    	<li><a href="web_system_proc.php">Processor</a></li>
 			<li><a href="web_system_disk.php">Disk</a></li>
 			<li><a href="web_system_net.php">Network</a></li>
 			<li><a href="web_king_system_mem.php">Memory</a></li>
@@ -85,7 +85,7 @@
     <hr >
     <h3>MQ Tier</h3>
 		<b>System</b>
-        	<li><a href="mq_system_proc.php">Processor</a></li>
+      <li><a href="mq_system_proc.php">Processor</a></li>
 			<li><a href="mq_system_disk.php">Disk</a></li>
 			<li><a href="mq_system_net.php">Network</a></li>
 			<li><a href="mq_king_system_mem.php">Memory</a></li>
@@ -93,5 +93,19 @@
 			<li><a href="mq_queue.php">Queue Length</a></li>
 		<b>mysql-proxy</b>
         	<li><a href="mq_mysql-proxy.php">king</a></li>
+		<h3>APP Tier</h3>
+		<b>System</b>
+  		<li><a href="app_system_proc.php">Processor</a></li>
+			<li><a href="app_system_disk.php">Disk</a></li>
+			<li><a href="app_system_net.php">Network</a></li>
+			<li><a href="app_king_system_mem.php">Memory</a></li>
+    <b>Memcached</b>
+     	<li><a href="app_mc_data.php">Data</a></li>
+     	<li><a href="app_mc_sess.php">Session</a></li>
+    <b>Rails</b>
+     	<li><a href="app_rails_ewok.php">ewok</a></li>
+     	<li><a href="app_rails_ab.php">ab_test</a></li>
+		<b>mysql-proxy</b>
+      	<li><a href="app_mysql-proxy.php">king</a></li>
 </div>
 

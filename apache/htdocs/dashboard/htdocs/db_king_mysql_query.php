@@ -47,6 +47,20 @@ $template->setGraphTime($graphTime);
 }
 
 {
+    $graphName = "king-prod-db04 query types per $graphDownSample";
+    $tsd = new Tsd($graphTime);
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_select{host=sac-prod-db-03.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_insert{host=sac-prod-db-03.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_update{host=sac-prod-db-03.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_replace{host=sac-prod-db-03.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_update_multi{host=sac-prod-db-03.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_load{host=sac-prod-db-03.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.com_delete{host=sac-prod-db-03.unix.newokl.com}");
+    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
+}
+
+
+{
     $graphName = "Replication - seconds behind master $graphDownSample";
     $tsd = new Tsd($graphTime);
     $tsd->addMetric("sum:$graphDownSample-avg:mysql.slave.seconds_behind_master{host=*}");
@@ -76,6 +90,17 @@ $template->setGraphTime($graphTime);
 }
 
 {
+    $graphName = "king-prod-db04 SELECT types per $graphDownSample";
+    $tsd = new Tsd($graphTime);
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.select_scan{host=sac-prod-db-04.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.select_range_check{host=sac-prod-db-04.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.select_range{host=sac-prod-db-04.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.select_full_range_join{host=sac-prod-db-04.unix.newokl.com}");
+    $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.select_full_join{host=sac-prod-db-04.unix.newokl.com}");
+    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
+}
+
+{
     $graphName = "Connections by host per $graphDownSample";
     $tsd = new Tsd($graphTime);
     $tsd->addMetric("sum:$graphDownSample-avg:rate:mysql.connections{cluster=db,host=*}");
@@ -90,6 +115,13 @@ $template->setGraphTime($graphTime);
 }
 
 {
+    $graphName = "king-prod-db03 Connection States per $graphDownSample";
+    $tsd = new Tsd($graphTime);
+    $tsd->addMetric("sum:$graphDownSample-avg:mysql.connection_states{cluster=db,host=sac-prod-pdb-01.unix.newokl.com,state=*}");
+    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
+}
+
+{
     $graphName = "king-prod-db02 Connection States per $graphDownSample";
     $tsd = new Tsd($graphTime);
     $tsd->addMetric("sum:$graphDownSample-avg:mysql.connection_states{cluster=db,host=sac-prod-db-02.unix.newokl.com,state=*}");
@@ -97,11 +129,12 @@ $template->setGraphTime($graphTime);
 }
 
 {
-    $graphName = "king-prod-db03 Connection States per $graphDownSample";
+    $graphName = "king-prod-db04 Connection States per $graphDownSample";
     $tsd = new Tsd($graphTime);
-    $tsd->addMetric("sum:$graphDownSample-avg:mysql.connection_states{cluster=db,host=sac-prod-pdb-01.unix.newokl.com,state=*}");
+    $tsd->addMetric("sum:$graphDownSample-avg:mysql.connection_states{cluster=db,host=sac-prod-db-04.unix.newokl.com,state=*}");
     $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
+
 
 
 $template->render();

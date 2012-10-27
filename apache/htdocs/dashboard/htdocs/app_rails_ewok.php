@@ -9,7 +9,7 @@ $sizeArray = Dashboard::getWidthHeight();
 $graphWidth = $sizeArray[$graphSize][0];
 $graphHeight = $sizeArray[$graphSize][1];
 
-$title = "Web Tier Rails - ewok Metrics";
+$title = "APP Tier Rails - ewok Metrics";
 $template = new GraphContainer($graphTime, $title);
 $template->setGraphTime($graphTime);
 
@@ -22,42 +22,42 @@ $template->setGraphTime($graphTime);
  {
      $graphName = "Passenger Private Process Memory Count Aggregate";
      $tsd = new Tsd($graphTime);
-     $tsd->addMetric('sum:1m-avg:rails.passenger.proc.mem.priv.total{app_type=king,cluster=web}');
+     $tsd->addMetric('sum:1m-avg:rails.passenger.proc.mem.priv.total{app_type=king,cluster=app}');
      $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
  }
  
  {
      $graphName = "Passenger Private Process Memory Count by server";
      $tsd = new Tsd($graphTime);
-     $tsd->addMetric('sum:1m-avg:rails.passenger.proc.mem.priv.total{app_type=king,host=*,cluster=web}');
+     $tsd->addMetric('sum:1m-avg:rails.passenger.proc.mem.priv.total{app_type=king,host=*,cluster=app}');
      $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
  }
  
 {
  $graphName = "Rack Process Count Aggregate";
  $tsd = new Tsd($graphTime);
- $tsd->addMetric('sum:rails.rack.proc.count{rack_proc=okl_king_prod_rails_current,cluster=web}');
+ $tsd->addMetric('sum:rails.rack.proc.count{rack_proc=*,cluster=app}');
  $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
   $graphName = "Rack Process Count by server";
   $tsd = new Tsd($graphTime);
-  $tsd->addMetric('sum:rails.rack.proc.count{rack_proc=okl_king_prod_rails_current,host=*,cluster=web}');
+  $tsd->addMetric('sum:rails.rack.proc.count{rack_proc=*,host=*,cluster=app}');
   $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
         
 {
   $graphName = "Rack Private Process Memory Count Aggregate";
   $tsd = new Tsd($graphTime);
-  $tsd->addMetric('sum:rails.rack.proc.mem.priv.total{rack_proc=okl_king_prod_rails_current,cluster=web}');
+  $tsd->addMetric('sum:rails.rack.proc.mem.priv.total{rack_proc=*,cluster=app}');
   $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 
 {
    $graphName = "Rack Private Process Memory Count by server";
    $tsd = new Tsd($graphTime);
-   $tsd->addMetric('sum:rails.rack.proc.mem.priv.total{rack_proc=okl_king_prod_rails_current,host=*,cluster=web}');
+   $tsd->addMetric('sum:rails.rack.proc.mem.priv.total{rack_proc=*,host=*,cluster=app}');
    $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
 }
 

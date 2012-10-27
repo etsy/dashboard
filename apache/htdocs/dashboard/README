@@ -9,7 +9,7 @@ Until this is setup on a shared server, 3 steps are needed to use the Etsy dashb
 
 <VirtualHost *:80>
     ServerName localhost.newokl.com
-    DocumentRoot "/work/htdocs/store/public"
+    DocumentRoot "/hg/dashboard/apache/htdocs"
  
     SetEnv APPLICATION_ENV "production"
  
@@ -19,7 +19,7 @@ Until this is setup on a shared server, 3 steps are needed to use the Etsy dashb
 	...
 	</Directory>
 
-    <Directory "/work/htdocs/dashboard/htdocs">
+    <Directory "/hg/dashboard/apache/htdocs">
         DirectoryIndex web.php
         AllowOverride None
         Order allow,deny

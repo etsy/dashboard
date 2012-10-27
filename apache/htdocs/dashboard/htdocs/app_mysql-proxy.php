@@ -22,21 +22,21 @@ $template->setGraphTime($graphTime);
  {
      $graphName = "mysql-proxy rss size (mb)";
      $tsd = new Tsd($graphTime);
-     $tsd->addMetric("sum:$graphDownSample-avg:process.mon.rss_mb{process=mysql-proxy,app=king,host=*,cluster=web}");
+     $tsd->addMetric("sum:$graphDownSample-avg:process.mon.rss_mb{process=mysql-proxy,app=king,host=*,cluster=app}");
      $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
  }
  
  {
      $graphName = "mysql-proxy vsize size (mb)";
      $tsd = new Tsd($graphTime);
-     $tsd->addMetric("sum:$graphDownSample-avg:process.mon.vsize_mb{process=mysql-proxy,app=king,host=*,cluster=web}");
+     $tsd->addMetric("sum:$graphDownSample-avg:process.mon.vsize_mb{process=mysql-proxy,app=king,host=*,cluster=app}");
      $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
  }
 
  {
      $graphName = "mysql-proxy percent cpu";
      $tsd = new Tsd($graphTime);
-     $tsd->addMetric("sum:$graphDownSample-avg:process.mon.pcpu{process=mysql-proxy,app=king,host=*,cluster=web}");
+     $tsd->addMetric("sum:$graphDownSample-avg:process.mon.pcpu{process=mysql-proxy,app=king,host=*,cluster=app}");
      $template->addGraph($tsd->getDashboardHTML($graphWidth, $graphHeight), $graphName);
  }
     
