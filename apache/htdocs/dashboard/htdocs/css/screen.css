@@ -1,0 +1,61 @@
+body {
+	font-family: helvetica;
+}
+body.index p {
+    margin: 0.7em 0 0 0;
+}
+h1,h2 {
+	color: #aaa;
+    margin: 15px 0 5px;
+    clear: both;
+}
+
+img {
+	border: none;
+}
+
+#status {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 12px;
+	color: silver;
+	line-height: 4px;
+}
+
+#controls {
+	margin-bottom: 5px;
+}
+
+.dashboard .stackedMetricMedium img,
+.dashboard .stackedMetricSmall img {
+	width: 485px;
+}
+.dashboard .singleMetricMedium img,
+.dashboard .singleMetricSmall img,
+.dashboard .reportMedium img,
+.dashboard .reportSmall img {
+
+}
+
+.cacti_bandwidth img {
+	width: 600px;
+}
+
+span.tsdGraph,
+span.graphiteGraph,
+span.ganglia {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+span.singleMetricMedium {
+    padding-bottom: 14px;
+}
+
+

@@ -1,0 +1,71 @@
+One Kings Lane Getting Started
+----------------------
+
+Until this is setup on a shared server, 3 steps are needed to use the Etsy dashboard with OpenTSDB:
+
+1. git clone https://github.com/okl/dashboard.git
+2. open a tunnel to OpenTSDB, e.g.: ssh -o ServerAliveInterval=5 -l emmet -L 4242:sac-ops-adm-03:4242 colo-gate.newokl.com
+3. Set up an apache httpd.conf directory in your local instance and restart. Following is a sample:
+
+<VirtualHost *:80>
+    ServerName localhost.newokl.com
+    DocumentRoot "/hg/dashboard/apache/htdocs"
+ 
+    SetEnv APPLICATION_ENV "production"
+ 
+    Alias /dashboard/ /Volumes/MacHD_case_sensitive/htdocs/dashboard/htdocs/
+
+    <Directory "/work/htdocs/store/public">
+	...
+	</Directory>
+
+    <Directory "/hg/dashboard/apache/htdocs">
+        DirectoryIndex web.php
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+Once you have the dashboard working, create and push additional .php dashboard files to track whatever metrics matter most to you (and share with everyone). More on that follows (from Etsy's original Readme)...
+
+Etsy Dashboards
+----------------------
+
+This code is an example of how we build monitoring dashboards at Etsy. These dashboards are bare bones collections of metrics from various graphing tools, specifically Graphite, Ganglia, and Cacti. It's not important for these to be pretty (though a bit of CSS won't hurt!). The important thing is to collect complementary graphs in a single view so you can see correlations between different parts of your architecture.
+
+Why?
+
+ - Put related metrics from different tools on a single page.
+ - Select time period to view (1 hour, 4 hours, 12 hours, 1 day, 1 week, etc.)
+ - Periodically refresh each graph, so you can use on a wall-mounted monitor.
+
+We use this day in and day out. Over 30 contributors have build more than 50 feature-specific dashboards within Etsy's engineering team. For more details about how we collect and use metrics at Etsy, start with these slides: http://www.slideshare.net/mikebrittain/metricsdriven-engineering
+
+Hack on these to fit your own needs.
+
+
+Getting Started
+----------------------
+
+Only a few steps are required to get started, assuming you are already collecting metrics in Graphite, Ganglia, and/or Cacti:
+
+1. Grab this code and put it on a web server. Point the document root at the htdocs folder.
+
+2. Update the base URL settings in lib/Config.php. If you are collecting deploy lines in Graphite, you can set these names in the config file as well (otherwise, just remove those array entries).
+
+3. The htdocs/example.php script serves as a good place to start for building out a dashboard of your own, and includes samples of how to use each of the Graphite, Ganglia, and Cacti classes.
+
+
+Legal
+----------------------
+
+This code is released under the MIT license.
+
+The dashboard code requires a copy of jQuery. The example.php sample code links to Google's hosted version of jQuery, which is governed by the terms outlined on their web site: http://code.google.com/apis/libraries/terms.html
+
+
+Questions?
+----------------------
+
+Contact me on GitHub, or directly by email: mike@etsy.com

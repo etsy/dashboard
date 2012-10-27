@@ -1,0 +1,86 @@
+/* 
+    Document   : container.css
+    Created on : Sep 20, 2012, 10:41:26 AM
+    Author     : bmayes
+    Description:
+        Setup the 2 column layout and style the page.
+*/
+
+
+#container
+{
+width: 100%;
+margin: 10px auto;
+background-color: #fff;
+color: #333;
+border: 1px solid gray;
+line-height: 130%;
+}
+
+#top
+{
+padding: .5em;
+background-color: #ddd;
+border-bottom: 1px solid gray;
+}
+
+#top h1
+{
+padding: 0;
+margin: 0;
+}
+
+#leftnav
+{
+    float: left;
+    width: 160px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 2px;
+    padding: 1em;
+    background-color: #ddd;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+#content
+{
+    margin-left: 200px;
+    padding: 1em;
+    padding: 1em;
+}
+
+#footer
+{
+clear: both;
+margin: 0;
+padding: .5em;
+/*
+color: #333;
+background-color: #ddd;
+border-top: 1px solid gray;
+*/
+}
+
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.myform{
+margin:0 auto;
+padding:14px;
+}
+/* ----------- stylized ----------- */
+    #stylized label{
+    display:block;
+    text-align:left;
+    width:140px;
+    float:left;
+    }
+
+    #stylized input{
+    float:left;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:200px;
+    margin:2px 0 20px 10px;
+    }
