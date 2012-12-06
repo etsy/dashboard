@@ -199,6 +199,10 @@ class GraphFactory {
                     $g = new Graph_FITB($graph_time);
                     $g->addMetric($graph_config['host'], $graph_config['portname'], $graph_config['graphtype'], $graph_config['title']);
                     return $g->getDashboardHTML();
+                case 'tsd':
+                    $g = new Graph_Tsd($graph_time);
+                    $g->addMetric($graph_config['metric']);
+                    return $g->getDashboardHTML($width, $height);
                 default:
                     return '';
             }

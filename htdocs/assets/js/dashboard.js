@@ -16,6 +16,7 @@ var refresh_timeout = (typeof refresh_timeout !== 'undefined' ? refresh_timeout 
 var ganglia_server = 'ganglia.example.com';
 var graphite_server = 'graphite.example.com';
 var cacti_server = 'cacti.example.com';
+var tsd_server = 'tsd.example.com';
 
 function refreshImage() {
     if (image_index < document.images.length) {

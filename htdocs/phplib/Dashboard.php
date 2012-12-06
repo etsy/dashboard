@@ -15,6 +15,7 @@ require_once('Graph/GraphitePercentage.php');
 require_once('Graph/GraphitePie.php');
 require_once('Graph/Graphlot.php');
 require_once('Graph/NewRelic.php');
+require_once('Graph/Tsd.php');
 require_once('SplunkUtils.php');
 require_once('Tabs.php');
 require_once('TimingUtils.php');
@@ -32,6 +33,7 @@ $ganglia_server_dev = "ganglia.dev.example.com";
 $graphite_server = "graphite.example.com";
 $graphite_server_dev = "graphite.dev.example.com";
 $splunk_server = "splunk.example.com";
+$tsd_server = "tsd.example.com";
 
 /** Hadoop name node */
 $hadoopnn = "nn1.example.com";
@@ -59,6 +61,7 @@ class Dashboard {
     public static $DB_TABS = array(
         'PGBouncer' => '/example_pgbouncer.php',
         'PostgreSQL Queries' => '/example_postgresql_queries.php',
+        'CPU usage' => '/example_cpu.php',
     );
 
     public static $DEPLOY_TABS = array(
