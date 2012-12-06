@@ -1,8 +1,5 @@
 <?php
 
-// the title used for the page
-$title = 'Cacti Example';
-
 require_once 'phplib/Dashboard.php';
 
 $metrics = array(
