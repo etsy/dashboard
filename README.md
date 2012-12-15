@@ -17,7 +17,7 @@ INSTALLATION:
 1. Create a new virtual host on your favourite web server, and point the
    DocumentRoot to the `htdocs/` directory.
 
-2. Edit `htdocs/phplib/Dashboards.php`:
+2. Edit `htdocs/phplib/Dashboard.php`:
    i. Edit the varions server variables near the top, to point to your graphing
       servers.
    ii. You can edit the "TABS" section below that. Each of your dashboard pages
