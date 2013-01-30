@@ -19,7 +19,7 @@ $time = !empty($_GET['time']) ? $_GET['time'] : "1h";
 
 <div id="status"></div>
 
-<?
+<?php
 $tabs = Dashboard::$DB_TABS;
 $tab_url = Dashboard::getTabUrl(__FILE__);
 include 'phplib/template_tabs.php';
@@ -30,7 +30,7 @@ include 'phplib/template_tabs.php';
 </form>
 
 <div class='section'>
-<?
+<?php
 $activity_arr = array('pgb_v2_avg_querytime', 'pgb_v2_avg_req', 'pgb_v2_cl_active', 'pgb_v2_cl_waiting', 'pgb_v2_sv_active', 'pgb_v2_sv_idle', 'pgb_v2_sv_used');
 foreach ($pgbouncer_cluster_arr as &$cluster) {
     echo "<h2>{$cluster["name"]} pgBouncer pool status (" . Dashboard::displayTime($time) . ")</h2>";
