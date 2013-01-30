@@ -57,31 +57,31 @@ class Dashboard {
      */
 
     public static $DB_TABS = array(
-        'PGBouncer' => '/example_pgbouncer.php',
-        'PostgreSQL Queries' => '/example_postgresql_queries.php',
+        'PGBouncer' => 'example_pgbouncer.php',
+        'PostgreSQL Queries' => 'example_postgresql_queries.php',
     );
 
     public static $DEPLOY_TABS = array(
-        'FITB' => '/example_fitb.php',
-        'New Relic' => '/example_newrelic.php',
+        'FITB' => 'example_fitb.php',
+        'New Relic' => 'example_newrelic.php',
     );
 
     public static $HADOOP_TABS = array(
-        'Overview' => '/example_hadoop/overview.php',
-        'DFS' => '/example_hadoop/dfs.php',
-        'Jobs' => '/example_hadoop/jobs.php',
-        'Java Process Metrics' => '/example_hadoop/java_process.php',
-        'HBase' => '/example_hadoop/hbase.php',
+        'Overview' => 'example_hadoop/overview.php',
+        'DFS' => 'example_hadoop/dfs.php',
+        'Jobs' => 'example_hadoop/jobs.php',
+        'Java Process Metrics' => 'example_hadoop/java_process.php',
+        'HBase' => 'example_hadoop/hbase.php',
     );
 
     public static $NETWORK_TABS = array(
-        'FITB' => '/example_fitb.php',
-        'Netstat' => '/example_netstat.php',
-        'Mem info' => '/example_meminfo.php',
+        'FITB' => 'example_fitb.php',
+        'Netstat' => 'example_netstat.php',
+        'Mem info' => 'example_meminfo.php',
     );
 
     public static $TIME_TABS = array(
-        'Time' => '/example_time.php',
+        'Time' => 'example_time.php',
     );
 
     /**

@@ -26,9 +26,9 @@ if (strpos($_SERVER['REQUEST_URI'], 'deploy.php') !== false) {
         <? endif; ?>
         <div class="black">
             <? if (isset($_GET['black'])): ?>
-            <a href="?" title='white'><img src='/images/white.jpg' width='24' height='30'/></a>
+            <a href="?" title='white'><img src='images/white.jpg' width='24' height='30'/></a>
             <? else : ?>
-            <a href="?black" title='black'><img src='/images/black.jpg' width='37' height='30'/></a>
+            <a href="?black" title='black'><img src='images/black.jpg' width='37' height='30'/></a>
             <? endif; ?>
         </div>
     </div>

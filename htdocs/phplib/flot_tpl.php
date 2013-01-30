@@ -14,14 +14,14 @@ function slugify($str) {
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
         <title>Dashboard <?echo (!empty($page_title) ? ": $page_title" :"");?></title>
-        <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/flot.css">
-        <script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="/assets/js/jquery.flot.js"></script>
-        <script type="text/javascript" src="/assets/js/flot/jquery.flot.stack.js"></script>
-        <script type="text/javascript" src="/assets/js/jquery.flot.trendline.js"></script>
-        <script type="text/javascript" src="/assets/js/flot.js"></script>
-        <script type="text/javascript" src="/assets/js/dashboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/flot.css">
+        <script type="text/javascript" src="assets/js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.flot.js"></script>
+        <script type="text/javascript" src="assets/js/flot/jquery.flot.stack.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.flot.trendline.js"></script>
+        <script type="text/javascript" src="assets/js/flot.js"></script>
+        <script type="text/javascript" src="assets/js/dashboard.js"></script>
         <?php
             if (isset($additional_head)){
                 echo($additional_head);
