@@ -23,13 +23,13 @@ if (strpos($_SERVER['REQUEST_URI'], 'deploy.php') !== false) {
         <div class="controls-inner">
             <?= $additional_controls ?>
         </div>
-        <? endif; ?>
+        <?php endif; ?>
         <div class="black">
-            <? if (isset($_GET['black'])): ?>
+            <?php if (isset($_GET['black'])): ?>
             <a href="?" title='white'><img src='/images/white.jpg' width='24' height='30'/></a>
-            <? else : ?>
+            <?php else : ?>
             <a href="?black" title='black'><img src='/images/black.jpg' width='37' height='30'/></a>
-            <? endif; ?>
+            <?php endif; ?>
         </div>
     </div>
 </form>

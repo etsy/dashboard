@@ -1,6 +1,6 @@
 <?php require_once('Dashboard.php'); ?>
 
-<? if (!empty($tabs)) { ?>
+<?php if (!empty($tabs)) { ?>
 <div class="home"><a href="/" title="Dashboards Home"><img src="/images/pointer-datepicker.png"></a></div>
 <ul class='tabs'>
     <?
@@ -21,7 +21,7 @@
     $i = 0;
     ?>
 
-    <? foreach ($tabs as $name => $url) : ?>
+    <?php foreach ($tabs as $name => $url) : ?>
     <?
     $full_url = $url;
 
@@ -37,7 +37,7 @@
     <li class='<?= $i == 0 ? 'first ' : '' ?><?= $url == $tab_url ? "active" : ""?>'>
         <a href='<?= $full_url ?>' <?= $link_target ?> title='<?= $link_title ?>'><span><?= $link_title ?><?= $link_image ?></span></a>
     </li>
-    <? $i++; ?>
-    <? endforeach; ?>
+    <?php $i++; ?>
+    <?php endforeach; ?>
 </ul>
-<? } ?>
+<?php } ?>

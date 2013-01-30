@@ -29,7 +29,7 @@ function slugify($str) {
         ?>
     </head>
     <body>
-    <? include 'template_tabs.php'; ?>
+    <?php include 'template_tabs.php'; ?>
 <?php
 if (!isset($no_controls)) {
 ?>
@@ -49,7 +49,7 @@ if (!isset($no_controls)) {
     </form>
 <?php } ?>
 
-    <? $i = 0;
+    <?php $i = 0;
     if (!isset($graphs)) {
         $graphs = array();
     }
@@ -57,7 +57,7 @@ if (!isset($no_controls)) {
 	<h1 id="<?=slugify($title)?>"><a href="#<?=slugify($title)?>"><?=$title?></a></h1>
 
     <div class="clear section">
-    <? foreach ($inner as $index => $graph) {
+    <?php foreach ($inner as $index => $graph) {
             if (empty($graph)) {
                 print '<div class="container"></div>';
                 continue;
@@ -107,9 +107,9 @@ if (!isset($no_controls)) {
         var e = $("<?=$container_id ?> .graph");
         o.legend.container = "<?=$container_id ?> .legend";
         o = $.extend(true, {}, o, <?=$options?>);
-        <? if ($show_trends) { ?>
+        <?php if ($show_trends) { ?>
         o.trendline.show = true;
-        <? } ?>
+        <?php } ?>
         e.bind("plothover", showTip);
         var data = <?=$data?>;
         if (typeof(dataCallback) === 'function'){
@@ -117,9 +117,9 @@ if (!isset($no_controls)) {
         }
         $.plot(e, data, o);
     </script>
-    <? } // end foreach $inner ?>
+    <?php } // end foreach $inner ?>
     </div>
-    <? } // end foreach $graphs ?>
+    <?php } // end foreach $graphs ?>
     <?php
     if (isset($extra_html)) {
         echo $extra_html;
