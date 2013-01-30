@@ -13,7 +13,7 @@ function slugify($str) {
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-        <title>Dashboard <?echo (!empty($page_title) ? ": $page_title" :"");?></title>
+        <title>Dashboard <?php echo (!empty($page_title) ? ": $page_title" :"");?></title>
         <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/flot.css">
         <script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
@@ -89,9 +89,9 @@ if (!isset($no_controls)) {
             $data = $g->getData(true);
             $slug = slugify($title) . '_' . slugify($graph['title']);
     ?>
-    <div id="g-container-<?=$i?>" class="container<?if(isset($graph['wide']) && $graph['wide']):?> container-wide<?endif?>">
+    <div id="g-container-<?=$i?>" class="container<?php if(isset($graph['wide']) && $graph['wide']):?> container-wide<?php endif?>">
         <h2 id="<?=$slug?>"><a href="#<?=$slug?>"><?=$graph["title"]?></a></h2>
-        <div class="graph<?php if(isset($graph['tall']) && $graph['tall']):?> graph-tall<?endif?>"></div>
+        <div class="graph<?php if(isset($graph['tall']) && $graph['tall']):?> graph-tall<?php endif?>"></div>
         <div class="legend"></div>
         <div class="graphite-link"><a href="<?=$g->getImageURL(700,500)?>">View in Graphite</a></div>
     </div>
@@ -125,7 +125,7 @@ if (!isset($no_controls)) {
         echo $extra_html;
     }
     ?>
-    <?
+    <?php 
     if (isset($funnels)) {
         include 'flot_funnel_tpl.php';
 	} ?>

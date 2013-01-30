@@ -28,7 +28,7 @@
             <script type="text/javascript" src="<?= $page_js_import ?>"></script>
         <?php endforeach; ?>
     <?php endif; ?>
-    <?
+    <?php 
     /**
      * When viewing time windows of 1 day or more, use a longer time out
      * for the XHR that refreshes images.

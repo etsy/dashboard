@@ -10,7 +10,7 @@ if (!isset($until)) {
         <div class="controls-inner">
             <input type="hidden" name="m" value="1"/>
             <?= Controls::buildTimeControl($time, $times, $until); ?>
-<?
+<?php 
 // FIXME - hacky. Just until we can get all graphs using controls to accept until parameter
 // For now, just doing this on deploy graphs page
 if (strpos($_SERVER['REQUEST_URI'], 'deploy.php') !== false) {

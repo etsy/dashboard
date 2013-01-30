@@ -3,7 +3,7 @@
 <?php if (!empty($tabs)) { ?>
 <div class="home"><a href="/" title="Dashboards Home"><img src="/images/pointer-datepicker.png"></a></div>
 <ul class='tabs'>
-    <?
+    <?php 
     $get_params = array();
     foreach ($_GET as $key => $value) {
         if (isset($routing_param) && $key == $routing_param) {
@@ -22,7 +22,7 @@
     ?>
 
     <?php foreach ($tabs as $name => $url) : ?>
-    <?
+    <?php 
     $full_url = $url;
 
     if ($url_params) {

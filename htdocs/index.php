@@ -35,7 +35,7 @@ $sections = array(
             <div class='index-group-title'><?= $dashboard_group_title ?></div>
             <ul style='margin: 0; padding-left: 20px;'>
                 <?php foreach ($dashboards as $name => $url) : ?>
-                <?
+                <?php 
                 $link_title = Tabs::getLinkTitle($name, $url);
                 $link_target = Tabs::getLinkTarget($url);
                 $link_image = Tabs::getLinkIcon($url);
