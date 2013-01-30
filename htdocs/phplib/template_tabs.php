@@ -1,7 +1,7 @@
 <?php require_once('Dashboard.php'); ?>
 
 <? if (!empty($tabs)) { ?>
-<div class="home"><a href="/" title="Dashboards Home"><img src="images/pointer-datepicker.png"></a></div>
+<div class="home"><a href="?" title="Dashboards Home"><img src="images/pointer-datepicker.png"></a></div>
 <ul class='tabs'>
     <?
     $get_params = array();
