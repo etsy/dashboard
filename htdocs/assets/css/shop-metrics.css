@@ -241,7 +241,7 @@ div.event-info {
     float: right;
     width: 14px;
     height: 14px;
-    background: url('/images/edit-icon.gif') no-repeat;
+    background: url('images/edit-icon.gif') no-repeat;
     opacity: .25;
 }
 

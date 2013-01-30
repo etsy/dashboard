@@ -24,8 +24,8 @@ if (isset($graphs)){
    <div class="notice"><button id="authButton">Loading...</button></div>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="assets/js/google_analytics_graphs.js"></script>
-    <script language="javascript" type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="/assets/js/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/jquery-1.6.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/js/jquery.flot.js"></script>
 <?php endif; ?>
 
 <?php if ($has_ganglia && $time != '1h'): ?>
