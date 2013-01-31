@@ -18,10 +18,10 @@
     padding: 18px 12px 10px;
     border-bottom: 1px solid #ECECEC;
     margin-top: -8px;
-    background: url('/images/pointer-datepicker.png') no-repeat 20px 0 transparent;
+    background: url('images/pointer-datepicker.png') no-repeat 20px 0 transparent;
 }
     .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
-        background: url('/images/sprites/main-sprite.png') no-repeat scroll 0 -695px transparent;
+        background: url('images/sprites/main-sprite.png') no-repeat scroll 0 -695px transparent;
         cursor: pointer;
         height: 18px;
         outline: medium none;

@@ -1,16 +1,16 @@
 @font-face{ 
     font-family: 'WebSymbolsRegular';
-    src: url('/assets/fonts/websymbols-regular-webfont.eot');
-    src: url('/assets/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/websymbols-regular-webfont.woff') format('woff'),
-         url('/assets/fonts/websymbols-regular-webfont.ttf') format('truetype'),
-         url('/assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    src: url('assets/fonts/websymbols-regular-webfont.eot');
+    src: url('assets/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/websymbols-regular-webfont.woff') format('woff'),
+         url('assets/fonts/websymbols-regular-webfont.ttf') format('truetype'),
+         url('assets/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
     }
 
 @font-face{ 
   font-family: 'IconicStroke';
-    src: url('/assets/fonts/iconic_stroke.eot');
-    src: url('/assets/fonts/iconic_stroke.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/iconic_stroke.svg#iconic') format('svg');
+    src: url('assets/fonts/iconic_stroke.eot');
+    src: url('assets/fonts/iconic_stroke.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/iconic_stroke.svg#iconic') format('svg');
     }
 

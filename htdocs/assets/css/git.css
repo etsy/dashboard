@@ -57,7 +57,7 @@ html,body,#commit .human .message a,#commit .human .actor .name a {
   border-bottom:1px solid #bedce7;
   border-left:1px solid #bedce7;
   border-right:1px solid #bedce7;
-  background:#eaf2f5 url(/images/bg_gradient.gif) 0 100% repeat-x;
+  background:#eaf2f5 url(images/bg_gradient.gif) 0 100% repeat-x;
   overflow:hidden;
   padding:0 .7em .7em;
 }

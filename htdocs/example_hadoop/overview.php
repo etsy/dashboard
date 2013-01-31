@@ -6,7 +6,7 @@ $title = 'Hadoop: Overview';
 require_once '../phplib/Dashboard.php';
 
 $page_js_imports = array(
-    '/assets/js/jquery-ui-1.8.16.min.js'
+    'assets/js/jquery-ui-1.8.16.min.js'
 );
 
 // The important Ganglia graphs

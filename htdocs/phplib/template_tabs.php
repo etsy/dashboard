@@ -1,9 +1,9 @@
 <?php require_once('Dashboard.php'); ?>
 
-<? if (!empty($tabs)) { ?>
-<div class="home"><a href="/" title="Dashboards Home"><img src="/images/pointer-datepicker.png"></a></div>
+<?php if (!empty($tabs)) { ?>
+<div class="home"><a href="?" title="Dashboards Home"><img src="images/pointer-datepicker.png"></a></div>
 <ul class='tabs'>
-    <?
+    <?php 
     $get_params = array();
     foreach ($_GET as $key => $value) {
         if (isset($routing_param) && $key == $routing_param) {
@@ -21,8 +21,8 @@
     $i = 0;
     ?>
 
-    <? foreach ($tabs as $name => $url) : ?>
-    <?
+    <?php foreach ($tabs as $name => $url) : ?>
+    <?php 
     $full_url = $url;
 
     if ($url_params) {
@@ -37,7 +37,7 @@
     <li class='<?= $i == 0 ? 'first ' : '' ?><?= $url == $tab_url ? "active" : ""?>'>
         <a href='<?= $full_url ?>' <?= $link_target ?> title='<?= $link_title ?>'><span><?= $link_title ?><?= $link_image ?></span></a>
     </li>
-    <? $i++; ?>
-    <? endforeach; ?>
+    <?php $i++; ?>
+    <?php endforeach; ?>
 </ul>
-<? } ?>
+<?php } ?>
