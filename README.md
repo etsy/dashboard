@@ -49,22 +49,22 @@ Each type expects to find a global array named '$graphs', but the contents of
 this array vary from handler to handler.
 Here is what each of the current handlers expects:
 
- * Graphite
+ * **Graphite**:
     An array of metrics to print on the graph. This can be a single metric name,
     or a list of metrics. Eg:
     ``array( 'stats.foo.bar', 'stats.foo.baz' );``
 
- * Ganglia
+ * **Ganglia**:
     An array with the following key/value pairs:
       source: The name of the ganglia cluster
       node: The name of the server
       datum: The name of the graph
 
- * Cacti
+ * **Cacti**:
     Cacti does not require a complex array. The value of `metric` is the integer
     ID of the graph.
 
- * FITB
+ * **FITB**:
     FITB has no metric array, but expects the following variables for each graph
     object:
         host: The name of the network device
@@ -72,7 +72,7 @@ Here is what each of the current handlers expects:
         graphtype: One of 'bits', 'ucastpkts' or 'errors'
         title: The name you want for this graph
 
- * NewRelic:
+ * **NewRelic**:
     The NewRelic `metric` array for each graph requires two variables:
         time: One of the dashboard time frames, eg '1w', '2d', etc.
         url: The URL to the graph, as given when you make a graph public.
