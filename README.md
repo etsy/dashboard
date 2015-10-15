@@ -6,6 +6,11 @@
         \ \___,_\ \__/.\_\/\____/ \ \_\ \_\ \_,__/\ \____/\ \__/.\_\\ \_\\ \___,_\/\____/
          \/__,_ /\/__/\/_/\/___/   \/_/\/_/\/___/  \/___/  \/__/\/_/ \/_/ \/__,_ /\/___/
 
+# This is an Archived Project
+
+Dashboard is no longer actively maintained and is no longer in sync with the version used internally at Etsy.
+
+
 # Etsy Dashboards
 
 Source code for Etsy's dashboards framework.
