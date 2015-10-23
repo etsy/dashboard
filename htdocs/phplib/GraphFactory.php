@@ -199,6 +199,10 @@ class GraphFactory {
                     $g = new Graph_FITB($graph_time);
                     $g->addMetric($graph_config['host'], $graph_config['portname'], $graph_config['graphtype'], $graph_config['title']);
                     return $g->getDashboardHTML();
+                case 'splunk':
+                    $g = new SplunkUtils();
+                    $graph_url = SplunkUtils::splunkSearchUrl($graph_config['query'], $graph_time);
+                    return $g->htmlUrl($graph_config['title'],$graph_url);
                 default:
                     return '';
             }

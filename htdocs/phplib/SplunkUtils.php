@@ -5,9 +5,9 @@ class SplunkUtils {
      * @param string $query
      * @return string
      */
-    public static function splunkSearchUrl($query) {
+    public static function splunkSearchUrl($query, $time) {
         global $splunk_server;
-        return "https://{$splunk_server}/en-US/app/search/flashtimeline?q=search " . urlencode(trim($query));
+        return "https://{$splunk_server}/en-US/app/search/flashtimeline?q=search " . urlencode(trim($query)) . "&earliest=-" . $time . "&latest=now";
     }
 
     /**
@@ -16,6 +16,6 @@ class SplunkUtils {
      * @return string
      */
     public static function htmlUrl($content, $link) {
-        return sprintf('<a href="%s">%s</a>', $link, $content);
+        return sprintf('<a href="%s" target="_blank">%s</a>', $link, $content);
     }
 }
