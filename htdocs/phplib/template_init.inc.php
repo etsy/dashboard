@@ -19,10 +19,10 @@ if (isset($graphs)) {
         $page_js_imports = array_merge(
             isset($page_js_imports) ? $page_js_imports : array(),
             array(
-                "/assets/js/flot/jquery.flot.js",
-                "/assets/js/flot/jquery.flot.pie.js",
-                "/assets/js/flot.js",
-                "/assets/js/graphite_percentage.js",
+                "assets/js/flot/jquery.flot.js",
+                "assets/js/flot/jquery.flot.pie.js",
+                "assets/js/flot.js",
+                "assets/js/graphite_percentage.js",
             ));
     }
 
@@ -30,9 +30,9 @@ if (isset($graphs)) {
         $page_js_imports = array_merge(
             isset($page_js_imports) ? $page_js_imports : array(),
             array(
-                "/assets/js/d3-2.9.1.min.js",
-                "/assets/js/graphite_percentage.js",
-                "/assets/js/graphite_bar_percentage.js",
+                "assets/js/d3-2.9.1.min.js",
+                "assets/js/graphite_percentage.js",
+                "assets/js/graphite_bar_percentage.js",
             ));
     }
 
@@ -52,13 +52,13 @@ if (isset($graphs)) {
         $page_js_imports = array_merge(
             isset($page_js_imports) ? $page_js_imports : array(),
             array(
-                "/assets/js/zeroclipboard-0.7/ZeroClipboard.js",
-                "/assets/js/copyurl.js",
+                "assets/js/zeroclipboard-0.7/ZeroClipboard.js",
+                "assets/js/copyurl.js",
             ));
         $page_css_imports = array_merge(
             isset($page_css_imports) ? $page_css_imports : array(),
             array(
-                "/assets/css/copyurl.css",
+                "assets/css/copyurl.css",
             ));
     }
 }

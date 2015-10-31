@@ -45,7 +45,7 @@ class Tabs {
      * @return string
      */
     public static function getLinkIcon($url) {
-        return self::isAbsoluteLink($url) ? '<img src="/images/icon_new_window.gif" height="12" width="12"/>' : '';
+        return self::isAbsoluteLink($url) ? '<img src="images/icon_new_window.gif" height="12" width="12"/>' : '';
     }
 
     /**

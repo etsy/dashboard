@@ -13,15 +13,15 @@ function slugify($str) {
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-        <title>Dashboard <?echo (!empty($page_title) ? ": $page_title" :"");?></title>
-        <link rel="stylesheet" type="text/css" href="/assets/css/screen.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/flot.css">
-        <script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="/assets/js/jquery.flot.js"></script>
-        <script type="text/javascript" src="/assets/js/flot/jquery.flot.stack.js"></script>
-        <script type="text/javascript" src="/assets/js/jquery.flot.trendline.js"></script>
-        <script type="text/javascript" src="/assets/js/flot.js"></script>
-        <script type="text/javascript" src="/assets/js/dashboard.js"></script>
+        <title>Dashboard <?php echo (!empty($page_title) ? ": $page_title" :"");?></title>
+        <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/flot.css">
+        <script type="text/javascript" src="assets/js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.flot.js"></script>
+        <script type="text/javascript" src="assets/js/flot/jquery.flot.stack.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.flot.trendline.js"></script>
+        <script type="text/javascript" src="assets/js/flot.js"></script>
+        <script type="text/javascript" src="assets/js/dashboard.js"></script>
         <?php
             if (isset($additional_head)){
                 echo($additional_head);
@@ -29,7 +29,7 @@ function slugify($str) {
         ?>
     </head>
     <body>
-    <? include 'template_tabs.php'; ?>
+    <?php include 'template_tabs.php'; ?>
 <?php
 if (!isset($no_controls)) {
 ?>
@@ -49,7 +49,7 @@ if (!isset($no_controls)) {
     </form>
 <?php } ?>
 
-    <? $i = 0;
+    <?php $i = 0;
     if (!isset($graphs)) {
         $graphs = array();
     }
@@ -57,7 +57,7 @@ if (!isset($no_controls)) {
 	<h1 id="<?=slugify($title)?>"><a href="#<?=slugify($title)?>"><?=$title?></a></h1>
 
     <div class="clear section">
-    <? foreach ($inner as $index => $graph) {
+    <?php foreach ($inner as $index => $graph) {
             if (empty($graph)) {
                 print '<div class="container"></div>';
                 continue;
@@ -89,9 +89,9 @@ if (!isset($no_controls)) {
             $data = $g->getData(true);
             $slug = slugify($title) . '_' . slugify($graph['title']);
     ?>
-    <div id="g-container-<?=$i?>" class="container<?if(isset($graph['wide']) && $graph['wide']):?> container-wide<?endif?>">
+    <div id="g-container-<?=$i?>" class="container<?php if(isset($graph['wide']) && $graph['wide']):?> container-wide<?php endif?>">
         <h2 id="<?=$slug?>"><a href="#<?=$slug?>"><?=$graph["title"]?></a></h2>
-        <div class="graph<?php if(isset($graph['tall']) && $graph['tall']):?> graph-tall<?endif?>"></div>
+        <div class="graph<?php if(isset($graph['tall']) && $graph['tall']):?> graph-tall<?php endif?>"></div>
         <div class="legend"></div>
         <div class="graphite-link"><a href="<?=$g->getImageURL(700,500)?>">View in Graphite</a></div>
     </div>
@@ -107,9 +107,9 @@ if (!isset($no_controls)) {
         var e = $("<?=$container_id ?> .graph");
         o.legend.container = "<?=$container_id ?> .legend";
         o = $.extend(true, {}, o, <?=$options?>);
-        <? if ($show_trends) { ?>
+        <?php if ($show_trends) { ?>
         o.trendline.show = true;
-        <? } ?>
+        <?php } ?>
         e.bind("plothover", showTip);
         var data = <?=$data?>;
         if (typeof(dataCallback) === 'function'){
@@ -117,15 +117,15 @@ if (!isset($no_controls)) {
         }
         $.plot(e, data, o);
     </script>
-    <? } // end foreach $inner ?>
+    <?php } // end foreach $inner ?>
     </div>
-    <? } // end foreach $graphs ?>
+    <?php } // end foreach $graphs ?>
     <?php
     if (isset($extra_html)) {
         echo $extra_html;
     }
     ?>
-    <?
+    <?php 
     if (isset($funnels)) {
         include 'flot_funnel_tpl.php';
 	} ?>

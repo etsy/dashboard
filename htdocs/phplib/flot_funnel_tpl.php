@@ -1,4 +1,4 @@
-<? $i = 0;
+<?php $i = 0;
 if (!isset($funnels)) {
     $funnels = array();
 }
@@ -6,7 +6,7 @@ foreach($funnels as $title => $inner) { ?>
 <h1 id="<?=slugify($title)?>"><a href="#<?=slugify($title)?>"><?=$title?></a></h1>
 
 <div class="clear section">
-<? foreach ($inner as $inner_title => $funnel) {
+<?php foreach ($inner as $inner_title => $funnel) {
     $steps = array();
     $i++;
     $j = 0;
@@ -43,15 +43,15 @@ foreach($funnels as $title => $inner) { ?>
         var e = $("<?=$container_selector ?> .graph");
 
         o.legend.container = "<?=$container_selector ?> .legend";
-        <? if (isset($options)):?>
+        <?php if (isset($options)):?>
         o = $.extend(true, {}, o, <?=$options?>);
-        <? endif ?>
+        <?php endif ?>
         e.bind("plothover", showFunnelTip);
         $.plot(e, <?=$data?>, o);
     </script>
 
-<? } // end foreach $inner ?>
+<?php } // end foreach $inner ?>
 
 </div>
 
-<? } // end foreach $graphs ?>
+<?php } // end foreach $graphs ?>

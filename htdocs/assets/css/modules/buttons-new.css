@@ -3,7 +3,7 @@
 .button-medium,
 .button-large,
 .button-fave{
-    background: url("/images/sprites/buttons-master.png") repeat-x scroll 0px -121px transparent;
+    background: url("images/sprites/buttons-master.png") repeat-x scroll 0px -121px transparent;
     background-color: #1b9dbc; 
     position: relative;
     font-size: 12px;
@@ -224,7 +224,7 @@ span.button-large-cart, a.button-large-cart{
    padding: 0;
 }
    .button-large-cart span{
-       background: url("/images/sprites/buttons-master.png") no-repeat scroll 10px -233px transparent;   
+       background: url("images/sprites/buttons-master.png") no-repeat scroll 10px -233px transparent;   
    }
    .button-large-cart input, a.button-large-cart span{
        padding: 0 14px 0 53px;
@@ -260,7 +260,7 @@ span.button-large-cart, a.button-large-cart{
     box-shadow: 0 1px 0 #f4f4f4;
 }
     .button-fave span {
-        background: url("/images/sprites/buttons-master.png") no-repeat scroll 4px -438px transparent;
+        background: url("images/sprites/buttons-master.png") no-repeat scroll 4px -438px transparent;
         padding: 0 9px 0 29px;
         display: inline-block;
         height: 23px;
@@ -269,7 +269,7 @@ span.button-large-cart, a.button-large-cart{
     }
     /* german language override */
     .de .button-fave span {
-        background: url("/images/sprites/buttons-master.png") no-repeat scroll 3px -438px transparent;
+        background: url("images/sprites/buttons-master.png") no-repeat scroll 3px -438px transparent;
         padding-right: 8px;
         white-space: nowrap;
     }
@@ -290,23 +290,23 @@ span.button-large-cart, a.button-large-cart{
     }
 
     .favorited-button span{
-        background: url("/images/sprites/buttons-master.png") no-repeat scroll 4px -466px transparent;
+        background: url("images/sprites/buttons-master.png") no-repeat scroll 4px -466px transparent;
     }
     /* german language override */
     .de .favorited-button span{
-        background: url("/images/sprites/buttons-master.png") no-repeat scroll 3px -466px transparent;
+        background: url("images/sprites/buttons-master.png") no-repeat scroll 3px -466px transparent;
     }
     
     /*spinner*/
     .favoriting,
     .favoriting:hover,
     .favoriting:active {
-        background: url("/images/sprites/buttons-master.png") repeat-x scroll 4px -354px #fbfaf8;
+        background: url("images/sprites/buttons-master.png") repeat-x scroll 4px -354px #fbfaf8;
     }
         .favoriting span,
         .favoriting:hover span,
         .favoriting:active span {
-            background: url("/images/sprites/buttons-master.png") repeat-x scroll 4px -354px #fbfaf8;
+            background: url("images/sprites/buttons-master.png") repeat-x scroll 4px -354px #fbfaf8;
         }
 
         .favoriting div.button-spinner {
@@ -319,7 +319,7 @@ span.button-large-cart, a.button-large-cart{
         }
 
         .favoriting div.show {
-            background: transparent url("/images/spinners/spinner16-trans.gif") no-repeat 0 0px;
+            background: transparent url("images/spinners/spinner16-trans.gif") no-repeat 0 0px;
         }
 
 
@@ -328,7 +328,7 @@ span.button-large-cart, a.button-large-cart{
 /*facebook*/
 
 .button-fb span, .button-tw span{
-        background: url("/images/sprites/connected-accounts-sprite.png") no-repeat scroll 0 -89px transparent;
+        background: url("images/sprites/connected-accounts-sprite.png") no-repeat scroll 0 -89px transparent;
 }
 
 .button-fb.button-medium{
@@ -376,7 +376,7 @@ span.button-large-cart, a.button-large-cart{
 --------------------------------- */
 .button-stack {
     margin-left: 4px;
-    background: transparent url("/images/sprites/buttons-favorite-master.png") no-repeat 0 -26px;
+    background: transparent url("images/sprites/buttons-favorite-master.png") no-repeat 0 -26px;
     height: 26px;
     line-height: 26px;
     margin-bottom: 0px;
@@ -390,7 +390,7 @@ span.button-large-cart, a.button-large-cart{
     position: relative;
 }
     .button-stack span {
-        background: transparent url("/images/sprites/buttons-favorite-master.png") no-repeat right 0px;
+        background: transparent url("images/sprites/buttons-favorite-master.png") no-repeat right 0px;
         display: inline-block;
         height: 26px;
         line-height: 26px;
@@ -438,7 +438,7 @@ span.button-large-cart, a.button-large-cart{
 }
 
 .button-circle {
-    background: transparent url("/images/sprites/buttons-favorite-master.png") no-repeat 0 -234px;
+    background: transparent url("images/sprites/buttons-favorite-master.png") no-repeat 0 -234px;
     height: 26px;
     line-height: 26px;
     margin-bottom: 0px;
@@ -451,7 +451,7 @@ span.button-large-cart, a.button-large-cart{
     position: relative;
 }
     .button-circle span {
-        background: transparent url("/images/sprites/buttons-favorite-master.png") no-repeat right 0px;
+        background: transparent url("images/sprites/buttons-favorite-master.png") no-repeat right 0px;
         display: inline-block;
         height: 26px;
         line-height: 26px;
@@ -543,21 +543,21 @@ span.button-large-cart, a.button-large-cart{
     }
     .add-to-circle-spinner{
         padding-right: 24px;
-        background: url('/images/spinners/spinner16.gif') no-repeat right 5px transparent; 
+        background: url('images/spinners/spinner16.gif') no-repeat right 5px transparent; 
         float: left;    
         display: none;
         height: 26px;
     }
         .add-to-circle-spinner.tan{
-            background: url('/images/spinners/spinner16-tan.gif') no-repeat right 5px transparent; 
+            background: url('images/spinners/spinner16-tan.gif') no-repeat right 5px transparent; 
         }
 
         .add-to-circle-spinner.blue{
-            background: url('/images/spinners/spinner16-blue.gif') no-repeat right 5px transparent; 
+            background: url('images/spinners/spinner16-blue.gif') no-repeat right 5px transparent; 
         }
 
         .add-to-circle-spinner.blue-darker{
-            background: url('/images/spinners/spinner16-blue-darker.gif') no-repeat right 5px transparent; 
+            background: url('images/spinners/spinner16-blue-darker.gif') no-repeat right 5px transparent; 
         }
 
     /* The new add to circle button can be mirrored as well */
@@ -584,7 +584,7 @@ span.button-large-cart, a.button-large-cart{
         }
         .tt-add-circle.tt.tt-mini .dismiss{
             position: absolute; right: 0; top: 1px;
-            background: transparent url('/images/sprites/buttons-master.png') no-repeat -64px -1326px;
+            background: transparent url('images/sprites/buttons-master.png') no-repeat -64px -1326px;
             display: block;
             width: 16px;
             height: 16px;
@@ -605,7 +605,7 @@ span.button-large-cart, a.button-large-cart{
 input.button-remove,
 button.button-remove,
 .button-remove.button-remove-quiet:hover {
-    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1326px;
+    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1326px;
     display: block; 
     width: 16px;
     height: 16px;
@@ -613,7 +613,7 @@ button.button-remove,
 	* html .button-remove,
 	* html input.button-remove,
 	* html button.button-remove {
-	    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1326px;
+	    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1326px;
 	}
 
 	.button-remove span {
@@ -652,7 +652,7 @@ button.button-remove,
 .button-edit,
 input.button-edit,
 button.button-edit {
-    	background: url("/images/sprites/buttons-master.png") no-repeat scroll 0 -1358px transparent;
+    	background: url("images/sprites/buttons-master.png") no-repeat scroll 0 -1358px transparent;
 	    height: 16px;
 	    width: 16px;
 }
@@ -688,28 +688,28 @@ button.button-edit {
 /* Add Button 
 ----------------------------------*/
 .button-add {
-    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1244px;
+    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1244px;
     display: block; 
     width: 28px;
     height: 28px;
 	text-indent:-999em;
 }
 	* html .button-add  {
-	    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1244px;
+	    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1244px;
 	}
 
 /* Favorite Button
 --------------------------------- */
 .button-favorite,
 .button-favorite.button-favorite-quiet:hover {
-    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1342px;
+    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1342px;
     display: block;
 	margin-top:-1px;
     width: 16px;
     height: 16px;
 }
 	* html .button-favorite {
-	    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1342px;
+	    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1342px;
 	} 
 
 	.button-favorite.button-favorite-quiet {
@@ -777,13 +777,13 @@ ul.listings-listview a.button-favorite {
 --------------------------------- */
 .button-contact,
 .button-contact.button-contact-quiet:hover {
-	background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1422px;
+	background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1422px;
     display: block;
     width: 16px;
     height: 16px;
 }
 	* html .button-contact {
-	    background: transparent url("/images/sprites/buttons-master.png") no-repeat 0 -1422px;
+	    background: transparent url("images/sprites/buttons-master.png") no-repeat 0 -1422px;
 	}
 
 	.button-contact.button-contact-quiet {
@@ -805,7 +805,7 @@ ul.listings-listview a.button-favorite {
 .js-checkbox {
     width: 14px;
     height: 15px;
-    background-image: url('/images/sprites/buttons-master.png');
+    background-image: url('images/sprites/buttons-master.png');
     background-position: 0 -1194px;
     display: inline-block;
 }
